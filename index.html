@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Puppy Name Generator - Find the Perfect Name for Your New Dog</title>
+<meta name="description" content="Struggling to name your new puppy? Our puppy name generator helps you find the perfect name by gender, style, breed, and meaning. Over 300 handpicked names for every type of dog.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://puppynamegenerator.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Puppy Name Generator - Find the Perfect Name for Your New Dog">
+<meta property="og:description" content="Struggling to name your new puppy? Our puppy name generator helps you find the perfect name by gender, style, breed, and meaning. Over 300 handpicked names for every type of dog.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://puppynamegenerator.net/">
+<meta property="og:image" content="https://puppynamegenerator.net/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Puppy Name Generator",
+  "url":"https://puppynamegenerator.net/",
+  "description":"Browse 300+ handpicked puppy names organized by gender, breed, personality, and meaning. Free tool for new dog owners.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://puppynamegenerator.net/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  },
+  "mainEntity":{
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How do I choose a good puppy name?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Pick a short name with one or two syllables. Dogs respond best to names ending in vowels. Avoid names that sound like common commands such as sit, stay, or no."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Should I give my puppy a human name?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Human names for dogs are very popular in the US. Names like Charlie, Lucy, Max, and Bella consistently rank among the top dog names year after year."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"When should I name my new puppy?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"You can name your puppy as soon as you bring them home. Many owners prefer to spend a few days observing the puppy's personality before settling on a name."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I change my dog's name later?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Dogs can learn a new name at any age. Use positive reinforcement, say the new name consistently, and pair it with treats. Most dogs adapt within one to two weeks."
+        }
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+<div class="container">
+<h1>Puppy Name Generator</h1>
+<p>Find the perfect name for your new furry friend. Pick a category, choose a style, and hit generate.</p>
+</div>
+</header>
+
+<section class="feature-buttons">
+<div class="container">
+<button class="feature-btn active" data-feature="generator">🎲 Name Generator</button>
+<button class="feature-btn" data-feature="photo">📷 AI Photo Match</button>
+</div>
+</section>
+
+<main class="container">
+
+<div id="generatorSection">
+
+<div class="pop-gender-tabs">
+<button class="gender-tab active" data-gender="male">Male Puppy Names</button>
+<button class="gender-tab" data-gender="female">Female Puppy Names</button>
+</div>
+
+<div class="pop-breed-row">
+<span class="filter-label">Breed</span>
+<div class="filter-pills" id="breedPills"></div>
+</div>
+<div class="pop-trait-row">
+<span class="filter-label">Trait</span>
+<div class="filter-pills" id="traitPills"></div>
+</div>
+
+<button class="gen-btn" id="genBtn">Generate Names</button>
+
+<section class="results">
+<div class="name-grid" id="nameGrid"></div>
+</section>
+
+<div class="quick-links">
+<a href="popular-puppy-names.html" class="quick-link-btn">Popular Puppy Names</a>
+</div>
+
+<section class="share-section" aria-label="Share this tool">
+<h3>Share with fellow puppy parents</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Facebook logo"><title>Facebook logo</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Finding%20the%20perfect%20puppy%20name%20just%20got%20easier!%20Try%20this%20free%20Puppy%20Name%20Generator%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="X (Twitter) logo"><title>X (Twitter) logo</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2F&description=Find%20the%20perfect%20name%20for%20your%20new%20puppy!%20300%2B%20handpicked%20names%20by%20gender%2C%20breed%2C%20and%20personality%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Share on Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Pinterest logo"><title>Pinterest logo</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2F&title=Free%20Puppy%20Name%20Generator%20-%20300%2B%20Cute%20Dog%20Names" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Reddit logo"><title>Reddit logo</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Finding%20the%20perfect%20puppy%20name%20just%20got%20easier!%20Try%20this%20free%20Puppy%20Name%20Generator%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="WhatsApp logo"><title>WhatsApp logo</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copy link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Copy link icon"><title>Copy link icon</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Copy Link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>How to Pick the Right Name for Your Puppy</h2>
+<p>Naming a new dog is one of the first big decisions you'll make as a pet parent. The Puppy Name Generator takes the guesswork out of it. Choose a category above, pick a sub-style, and you'll get 24 names ready to go. Looking for something tried-and-true like <strong>Max</strong> or <strong>Bella</strong>? Or maybe something offbeat like <strong>Zephyr</strong> or <strong>Nyx</strong>? Either way, this tool has you covered.</p>
+
+<h3>Advice from Professional Dog Trainers</h3>
+<ul>
+<li><strong>Keep it short.</strong> One or two syllables work best. Dogs pick up on shorter names faster during training sessions.</li>
+<li><strong>End with a vowel sound.</strong> Names that wrap up in "y," "ie," or "o" naturally catch a dog's ear.</li>
+<li><strong>Steer clear of command-like names.</strong> "Bo" sounds a lot like "No," and "Ray" can get mixed up with "Stay."</li>
+<li><strong>Test it out loud.</strong> Picture yourself calling the name across a busy dog park. If it rolls off the tongue, you're onto something.</li>
+</ul>
+
+<h3>Most Popular Dog Names in America</h3>
+<p>Recent surveys from the <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a> show that <strong>Luna</strong>, <strong>Charlie</strong>, <strong>Cooper</strong>, <strong>Lucy</strong>, <strong>Milo</strong>, <strong>Bella</strong>, <strong>Max</strong>, <strong>Daisy</strong>, <strong>Duke</strong>, and <strong>Winston</strong> lead the pack. Food-inspired names like <strong>Mochi</strong>, <strong>Peanut</strong>, and <strong>Pepper</strong> have also climbed the charts in recent years. Browse our full <a href="popular-puppy-names.html">popular puppy names list</a> for more ideas.</p>
+</section>
+
+<section class="faq" aria-label="Frequently asked questions">
+<h2>Frequently Asked Questions</h2>
+
+<h3>How do I choose a good puppy name?</h3>
+<p>Pick a short name with one or two syllables. Dogs respond best to names ending in vowels. Avoid names that sound like common commands such as sit, stay, or no.</p>
+
+<h3>Should I give my puppy a human name?</h3>
+<p>Human names for dogs are very popular in the US. Names like Charlie, Lucy, Max, and Bella consistently rank among the top dog names year after year.</p>
+
+<h3>When should I name my new puppy?</h3>
+<p>You can name your puppy as soon as you bring them home. Many owners prefer to spend a few days observing the puppy's personality before settling on a name.</p>
+
+<h3>Can I change my dog's name later?</h3>
+<p>Yes. Dogs can learn a new name at any age. Use positive reinforcement, say the new name consistently, and pair it with treats. Most dogs adapt within one to two weeks. <a href="comparison-page.html" class="no-underline">Compare your favorite names side by side</a> before making the final call.</p>
+</section>
+</div>
+
+</main>
+
+<section id="photoSection" class="container feature-section" style="display:none">
+<h2>📷 AI Photo Match</h2>
+<p class="section-desc">Upload a photo of your puppy and we'll analyze its coat color and features to suggest the perfect names.</p>
+
+<div class="photo-upload-area" id="photoUploadArea">
+<div class="upload-placeholder" id="uploadPlaceholder">
+<svg viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Upload photo icon"><title>Upload puppy photo icon</title><path fill="#d4c5b5" d="M52 8H12a4 4 0 00-4 4v40a4 4 0 004 4h40a4 4 0 004-4V12a4 4 0 00-4-4zm-4 40H16V16h32v32zM24 24a4 4 0 100-8 4 4 0 000 8zm-8 20l8-10 6 8 10-14 12 16H16z"/></svg>
+<p>Drag & drop your puppy photo here</p>
+<p class="upload-sub">or click to browse</p>
+<input type="file" id="photoInput" accept="image/*" hidden>
+</div>
+<div class="photo-preview" id="photoPreview" style="display:none">
+<button class="photo-delete-btn" id="photoDeleteBtn" aria-label="Remove photo">&times;</button>
+<canvas id="photoCanvas" style="display:none"></canvas>
+<img id="previewImg" alt="Uploaded puppy photo">
+<div class="detected-features" id="detectedFeatures"></div>
+<button class="gen-photo-btn" id="genPhotoBtn">Generate Names from Photo</button>
+</div>
+</div>
+
+<div class="photo-results" id="photoResults" style="display:none">
+<h3>Suggested Names for Your Puppy</h3>
+<div class="name-grid" id="photoNameGrid"></div>
+</div>
+
+<section class="share-section" aria-label="Share this tool">
+<h3>Share with fellow puppy parents</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Facebook logo"><title>Facebook logo</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Found%20the%20cutest%20name%20for%20my%20puppy%20using%20AI%20Photo%20Match!%20Try%20it%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="X (Twitter) logo"><title>X (Twitter) logo</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2F&description=Upload%20a%20photo%20of%20your%20puppy%20and%20get%20AI-suggested%20names%20based%20on%20coat%20color%20and%20features!%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Share on Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Pinterest logo"><title>Pinterest logo</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2F&title=AI%20Photo%20Match%20-%20Upload%20Your%20Puppy%20Photo%20and%20Get%20Name%20Suggestions" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Reddit logo"><title>Reddit logo</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=I%20just%20uploaded%20my%20puppy%20photo%20and%20got%20the%20cutest%20name%20suggestions!%20Try%20AI%20Photo%20Match%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="WhatsApp logo"><title>WhatsApp logo</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copy link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Copy link icon"><title>Copy link icon</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Copy Link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>How AI Photo Match Works</h2>
+<p>Not sure where to start with naming your puppy? AI Photo Match takes the guesswork out of the process. Upload a clear photo of your dog, and the tool analyzes coat color, brightness, and pattern to suggest names that fit your puppy's look. A golden-coated pup might get names like <strong>Honey</strong> or <strong>Sunny</strong>, while a dark-furred one could see <strong>Shadow</strong> or <strong>Midnight</strong>. It's fast, free, and surprisingly fun.</p>
+
+<h3>Getting the Best Results</h3>
+<ul>
+<li><strong>Use a well-lit photo.</strong> Natural daylight gives the most accurate color reading. Avoid heavy shadows or dim indoor lighting.</li>
+<li><strong>Show the full coat.</strong> A head-to-tail shot works better than a close-up of the face. The more fur visible, the better the analysis.</li>
+<li><strong>Keep it simple.</strong> One puppy per photo. Multiple dogs in the frame can throw off the color detection.</li>
+<li><strong>Try different angles.</strong> If the first round of names doesn't click, re-upload from another angle. Slight shifts in lighting can surface fresh suggestions.</li>
+</ul>
+
+<h3>Tips for Choosing a Name That Sticks</h3>
+<p>Once you have a shortlist from AI Photo Match or the Puppy Name Generator, narrow it down with a few practical checks. According to the <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a>, the best puppy names are one or two syllables and end in a vowel sound. Say each name out loud five times fast. If it still sounds natural, your dog will likely pick it up quickly. Avoid anything that rhymes with common commands like "stay," "no," or "come." Still torn between two favorites? Use our <a href="comparison-page.html">side-by-side comparison tool</a> to make the final call.</p>
+</section>
+</section>
+
+<footer>
+<p>&copy; 2026 Puppy Name Generator. All rights reserved.</p>
+<nav class="footer-links">
+<a href="about.html">About Us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-of-use.html">Terms of Use</a>
+<a href="cookie-policy.html">Cookie Policy</a>
+</nav>
+</footer>
+
+<script src="js/main.js?v=9" defer></script>
+<script src="js/features.js?v=9" defer></script>
+</body>
+</html>
