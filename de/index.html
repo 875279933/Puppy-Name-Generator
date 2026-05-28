@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welpen-Namensgenerator - Finden Sie den perfekten Namen für Ihren neuen Hund</title>
+<meta name="description" content="Haben Sie Schwierigkeiten, Ihren neuen Welpen zu benennen? Unser Welpen-Namensgenerator hilft Ihnen, den perfekten Namen nach Geschlecht, Stil, Rasse und Bedeutung zu finden. Über 300 sorgfältig ausgewählte Namen für jeden Hundetyp.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://puppynamegenerator.net/de/">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Welpen-Namensgenerator - Finden Sie den perfekten Namen für Ihren neuen Hund">
+<meta property="og:description" content="Haben Sie Schwierigkeiten, Ihren neuen Welpen zu benennen? Unser Welpen-Namensgenerator hilft Ihnen, den perfekten Namen nach Geschlecht, Stil, Rasse und Bedeutung zu finden. Über 300 sorgfältig ausgewählte Namen für jeden Hundetyp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://puppynamegenerator.net/de/">
+<meta property="og:image" content="https://puppynamegenerator.net/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Welpen-Namensgenerator",
+  "url":"https://puppynamegenerator.net/de/",
+  "description":"Durchsuchen Sie über 300 sorgfältig ausgewählte Welpen-Namen, organisiert nach Geschlecht, Rasse, Persönlichkeit und Bedeutung. Kostenloses Tool für neue Hundebesitzer.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://puppynamegenerator.net/de/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  },
+  "mainEntity":{
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Wie wähle ich einen guten Welpennamen aus?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Wählen Sie einen kurzen Namen mit einer oder zwei Silben. Hunde reagieren am besten auf Namen, die mit Vokalen enden. Vermeiden Sie Namen, die wie gängige Befehle klingen, z.B. Sitz, Platz oder Nein."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Sollte ich meinem Welpen einen menschlichen Namen geben?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Menschliche Namen für Hunde sind in den USA sehr beliebt. Namen wie Charlie, Lucy, Max und Bella stehen Jahr für Jahr unter den Top-Hundenamen."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Wann sollte ich meinen neuen Welpen benennen?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sie können Ihren Welpen sofort benennen, wenn Sie ihn nach Hause bringen. Viele Besitzer bevorzugen es, ein paar Tage zu verbringen und die Persönlichkeit des Welpen zu beobachten, bevor sie sich für einen Namen entscheiden."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Kann ich den Namen meines Hundes später ändern?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ja. Hunde können in jedem Alter einen neuen Namen lernen. Nutzen Sie positive Verstärkung, sagen Sie den neuen Namen konsistent und geben Sie Leckerlis dazu. Die meisten Hunde passen sich innerhalb von ein bis zwei Wochen an."
+        }
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+<div class="container">
+<h1>Welpen-Namensgenerator</h1>
+<p>Finden Sie den perfekten Namen für Ihren neuen pelzigen Freund. Wählen Sie eine Kategorie, wählen Sie einen Stil und klicken Sie auf generieren.</p>
+</div>
+</header>
+
+<section class="feature-buttons">
+<div class="container">
+<button class="feature-btn active" data-feature="generator">🎲 Namensgenerator</button>
+<button class="feature-btn" data-feature="photo">📷 KI-Fotoabgleich</button>
+</div>
+</section>
+
+<main class="container">
+
+<div id="generatorSection">
+
+<div class="pop-gender-tabs">
+<button class="gender-tab active" data-gender="male">Männliche Welpennamen</button>
+<button class="gender-tab" data-gender="female">Weibliche Welpennamen</button>
+</div>
+
+<div class="pop-breed-row">
+<span class="filter-label">Rasse</span>
+<div class="filter-pills" id="breedPills"></div>
+</div>
+<div class="pop-trait-row">
+<span class="filter-label">Eigenschaft</span>
+<div class="filter-pills" id="traitPills"></div>
+</div>
+
+<button class="gen-btn" id="genBtn">Namen generieren</button>
+
+<section class="results">
+<div class="name-grid" id="nameGrid"></div>
+</section>
+
+<div class="quick-links">
+<a href="popular-puppy-names.html" class="quick-link-btn">Beliebte Welpennamen</a>
+</div>
+
+<section class="share-section" aria-label="Teilen Sie dieses Tool">
+<h3>Teilen mit anderen Welpeneltern</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf Facebook teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Facebook-Logo"><title>Facebook-Logo</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Den%20perfekten%20Welpennamen%20finden%20ist%20jetzt%20einfacher!%20Probieren%20Sie%20diesen%20kostenlosen%20Welpen-Namensgenerator%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf X (Twitter) teilen">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="X (Twitter)-Logo"><title>X (Twitter)-Logo</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F&description=Finden%20Sie%20den%20perfekten%20Namen%20für%20Ihren%20neuen%20Welpen!%20300%2B%20sorgfältig%20ausgewählte%20Namen%20nach%20Geschlecht%2C%20Rasse%20und%20Persönlichkeit%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Auf Pinterest teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Pinterest-Logo"><title>Pinterest-Logo</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F&title=Kostenloser%20Welpen-Namensgenerator%20-%20300%2B%20süße%20Hundenamen" target="_blank" rel="noopener noreferrer" aria-label="Auf Reddit teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Reddit-Logo"><title>Reddit-Logo</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Den%20perfekten%20Welpennamen%20finden%20ist%20jetzt%20einfacher!%20Probieren%20Sie%20diesen%20kostenlosen%20Welpen-Namensgenerator%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf WhatsApp teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="WhatsApp-Logo"><title>WhatsApp-Logo</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Link kopieren">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Link kopieren-Symbol"><title>Link kopieren-Symbol</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Link kopieren
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Wie Sie den richtigen Namen für Ihren Welpen wählen</h2>
+<p>Einen neuen Hund zu benennen ist eine der ersten großen Entscheidungen, die Sie als Haustiereltern treffen. Der Welpen-Namensgenerator nimmt das Rätselraten heraus. Wählen Sie oben eine Kategorie, wählen Sie einen Unterstil und Sie erhalten 24 fertige Namen. Suchen Sie nach etwas Bewährtes wie <strong>Max</strong> oder <strong>Bella</strong>? Oder vielleicht etwas Außergewöhnliches wie <strong>Zephyr</strong> oder <strong>Nyx</strong>? Wie auch immer, dieses Tool hat Sie abgedeckt.</p>
+
+<h3>Ratschläge von professionellen Hundetrainern</h3>
+<ul>
+<li><strong>Halten Sie es kurz.</strong> Eine oder zwei Silben funktionieren am besten. Hunde nehmen kürzere Namen während der Trainingseinheiten schneller wahr.</li>
+<li><strong>Ende mit einem Vokalton.</strong> Namen, die mit "y," "ie," oder "o" enden, fangen das Ohr eines Hundes natürlich ein.</li>
+<li><strong>Vermeiden Sie befehlartige Namen.</strong> "Bo" klingt sehr nach "Nein," und "Ray" kann mit "Platz" verwechselt werden.</li>
+<li><strong>Testen Sie es laut.</strong> Stellen Sie sich vor, Sie rufen den Namen über einen belebten Hundepark. Wenn es sich leicht aussprechen lässt, haben Sie etwas Gutes.</li>
+</ul>
+
+<h3>Beliebteste Hundenamen in Amerika</h3>
+<p>Jüngste Umfragen des <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a> zeigen, dass <strong>Luna</strong>, <strong>Charlie</strong>, <strong>Cooper</strong>, <strong>Lucy</strong>, <strong>Milo</strong>, <strong>Bella</strong>, <strong>Max</strong>, <strong>Daisy</strong>, <strong>Duke</strong> und <strong>Winston</strong> die Spitze anführen. Essensinspirierte Namen wie <strong>Mochi</strong>, <strong>Peanut</strong> und <strong>Pepper</strong> haben in den letzten Jahren auch die Charts erklommen. Durchsuchen Sie unsere gesamte <a href="popular-puppy-names.html">Liste beliebter Welpennamen</a> für weitere Ideen.</p>
+</section>
+
+<section class="faq" aria-label="Häufig gestellte Fragen">
+<h2>Häufig gestellte Fragen</h2>
+
+<h3>Wie wähle ich einen guten Welpennamen aus?</h3>
+<p>Wählen Sie einen kurzen Namen mit einer oder zwei Silben. Hunde reagieren am besten auf Namen, die mit Vokalen enden. Vermeiden Sie Namen, die wie gängige Befehle klingen, z.B. Sitz, Platz oder Nein.</p>
+
+<h3>Sollte ich meinem Welpen einen menschlichen Namen geben?</h3>
+<p>Menschliche Namen für Hunde sind in den USA sehr beliebt. Namen wie Charlie, Lucy, Max und Bella stehen Jahr für Jahr unter den Top-Hundenamen.</p>
+
+<h3>Wann sollte ich meinen neuen Welpen benennen?</h3>
+<p>Sie können Ihren Welpen sofort benennen, wenn Sie ihn nach Hause bringen. Viele Besitzer bevorzugen es, ein paar Tage zu verbringen und die Persönlichkeit des Welpen zu beobachten, bevor sie sich für einen Namen entscheiden.</p>
+
+<h3>Kann ich den Namen meines Hundes später ändern?</h3>
+<p>Ja. Hunde können in jedem Alter einen neuen Namen lernen. Nutzen Sie positive Verstärkung, sagen Sie den neuen Namen konsistent und geben Sie Leckerlis dazu. Die meisten Hunde passen sich innerhalb von ein bis zwei Wochen an. <a href="comparison-page.html" class="no-underline">Vergleichen Sie Ihre Lieblingsnamen nebeneinander</a>, bevor Sie die endgültige Entscheidung treffen.</p>
+</section>
+
+<section class="lang-switcher" aria-label="Verfügbare Sprachen">
+<h3>Verfügbare Sprachen</h3>
+<div class="lang-links">
+<a href="https://puppynamegenerator.net/" hreflang="en" aria-label="English">🇺🇸 English</a>
+<a href="/es/" hreflang="es" aria-label="Español">🇪🇸 Español</a>
+<a href="/fr/" hreflang="fr" aria-label="Français">🇫🇷 Français</a>
+<a href="/it/" hreflang="it" aria-label="Italiano">🇮🇹 Italiano</a>
+<a href="/pt/" hreflang="pt" aria-label="Português">🇵🇹 Português</a>
+<a href="/ru/" hreflang="ru" aria-label="Русский">🇷🇺 Русский</a>
+</div>
+</section>
+</div>
+
+</main>
+
+<section id="photoSection" class="container feature-section" style="display:none">
+<h2>📷 KI-Fotoabgleich</h2>
+<p class="section-desc">Laden Sie ein Foto Ihres Welpen hoch und wir analysieren Fellfarbe und Merkmale, um die perfekten Namen vorzuschlagen.</p>
+
+<div class="photo-upload-area" id="photoUploadArea">
+<div class="upload-placeholder" id="uploadPlaceholder">
+<svg viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Foto hochladen-Symbol"><title>Welpenfoto hochladen-Symbol</title><path fill="#d4c5b5" d="M52 8H12a4 4 0 00-4 4v40a4 4 0 004 4h40a4 4 0 004-4V12a4 4 0 00-4-4zm-4 40H16V16h32v32zM24 24a4 4 0 100-8 4 4 0 000 8zm-8 20l8-10 6 8 10-14 12 16H16z"/></svg>
+<p>Ziehen Sie Ihr Welpenfoto hierher & ablegen</p>
+<p class="upload-sub">oder klicken Sie zum Durchsuchen</p>
+<input type="file" id="photoInput" accept="image/*" hidden>
+</div>
+<div class="photo-preview" id="photoPreview" style="display:none">
+<button class="photo-delete-btn" id="photoDeleteBtn" aria-label="Foto entfernen">&times;</button>
+<canvas id="photoCanvas" style="display:none"></canvas>
+<img id="previewImg" alt="Hochgeladenes Welpenfoto">
+<div class="detected-features" id="detectedFeatures"></div>
+<button class="gen-photo-btn" id="genPhotoBtn">Namen aus Foto generieren</button>
+</div>
+</div>
+
+<div class="photo-results" id="photoResults" style="display:none">
+<h3>Vorgeschlagene Namen für Ihren Welpen</h3>
+<div class="name-grid" id="photoNameGrid"></div>
+</div>
+
+<section class="share-section" aria-label="Teilen Sie dieses Tool">
+<h3>Teilen mit anderen Welpeneltern</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf Facebook teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Facebook-Logo"><title>Facebook-Logo</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Den%20süßesten%20Namen%20für%20meinen%20Welpen%20mit%20KI-Fotoabgleich%20gefunden!%20Probieren%20Sie%20es%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf X (Twitter) teilen">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="X (Twitter)-Logo"><title>X (Twitter)-Logo</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F&description=Laden%20Sie%20ein%20Foto%20Ihres%20Welpen%20hoch%20und%20erhalten%20KI-vorgeschlagene%20Namen%20basierend%20auf%20Fellfarbe%20und%20Merkmalen!%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Auf Pinterest teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Pinterest-Logo"><title>Pinterest-Logo</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F&title=KI-Fotoabgleich%20-%20Laden%20Sie%20Ihr%20Welpenfoto%20hoch%20und%20erhalten%20Namensvorschl%C3%A4ge" target="_blank" rel="noopener noreferrer" aria-label="Auf Reddit teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Reddit-Logo"><title>Reddit-Logo</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Ich%20habe%20gerade%20mein%20Welpenfoto%20hochgeladen%20und%20die%20süßesten%20Namensvorschl%C3%A4ge%20erhalten!%20Probieren%20Sie%20KI-Fotoabgleich%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fde%2F" target="_blank" rel="noopener noreferrer" aria-label="Auf WhatsApp teilen">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="WhatsApp-Logo"><title>WhatsApp-Logo</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Link kopieren">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Link kopieren-Symbol"><title>Link kopieren-Symbol</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Link kopieren
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Wie der KI-Fotoabgleich funktioniert</h2>
+<p>Nicht sicher, wo Sie mit der Benennung Ihres Welpen anfangen sollen? KI-Fotoabgleich nimmt das Rätselraten aus dem Prozess. Laden Sie ein klares Foto Ihres Hundes hoch, und das Tool analysiert Fellfarbe, Helligkeit und Muster, um Namen vorzuschlagen, die zum Aussehen Ihres Welpen passen. Ein goldfarbener Welpe könnte Namen wie <strong>Honey</strong> oder <strong>Sunny</strong> erhalten, während ein dunkelfarbiger <strong>Shadow</strong> oder <strong>Midnight</strong> sehen könnte. Es ist schnell, kostenlos und überraschend lustig.</p>
+
+<h3>So erzielen Sie die besten Ergebnisse</h3>
+<ul>
+<li><strong>Verwenden Sie ein gut beleuchtetes Foto.</strong> Natürliches Tageslicht ergibt die genaueste Farbauswertung. Vermeiden Sie starke Schatten oder dunkle Innenbeleuchtung.</li>
+<li><strong>Zeigen Sie das gesamte Fell.</strong> Eine Aufnahme von Kopf bis Schwanz funktioniert besser als eine Nahaufnahme des Gesichts. Je mehr Fell sichtbar ist, desto besser die Analyse.</li>
+<li><strong>Halten Sie es einfach.</strong> Ein Welpe pro Foto. Mehrere Hunde im Bild können die Farberkennung stören.</li>
+<li><strong>Probieren Sie verschiedene Winkel.</strong> Wenn die erste Namensrunde nicht passt, laden Sie aus einem anderen Winkel erneut hoch. Kleine Lichtverschiebungen können frische Vorschläge hervorbringen.</li>
+</ul>
+
+<h3>Tipps zum Auswählen eines Namens, der hält</h3>
+<p>Sobald Sie eine Auswahlliste von KI-Fotoabgleich oder dem Welpen-Namensgenerator haben, verkleinern Sie sie mit ein paar praktischen Überprüfungen. Laut dem <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a> sind die besten Welpennamen ein oder zwei Silben lang und enden mit einem Vokalton. Sagen Sie jeden Namen fünfmal hintereinander laut. Wenn er sich immer noch natürlich anhört, wird Ihr Hund ihn wahrscheinlich schnell lernen. Vermeiden Sie alles, was mit gängigen Befehlen wie "Platz," "Nein" oder "Komm" reimt. Immer noch zwischen zwei Favoriten zerrissen? Nutzen Sie unser <a href="comparison-page.html">Vergleichstool</a>, um die endgültige Entscheidung zu treffen.</p>
+</section>
+</section>
+
+<footer>
+<p>&copy; 2026 Welpen-Namensgenerator. Alle Rechte vorbehalten.</p>
+<nav class="footer-links">
+<a href="about.html">Über uns</a>
+<a href="privacy-policy.html">Datenschutz</a>
+<a href="terms-of-use.html">Nutzungsbedingungen</a>
+<a href="cookie-policy.html">Cookie-Richtlinie</a>
+</nav>
+</footer>
+
+<script src="js/main.js?v=9" defer></script>
+<script src="js/features.js?v=9" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2BCWJ1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F2R2BCWJ1B');
+</script>
+</body>
+</html>
