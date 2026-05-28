@@ -48,6 +48,11 @@ header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
 .quick-links{text-align:center;padding:0 0 28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .quick-link-btn{display:inline-block;padding:10px 28px;border-radius:24px;background:#ff91a4;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
 .quick-link-btn:hover{background:#e25563;transform:translateY(-1px)}
+.lang-switcher{padding:24px 20px 16px;text-align:center;border-top:1px solid #f5e6d3;margin-top:8px}
+.lang-switcher h3{font-size:.95rem;color:#a89a8a;margin-bottom:12px;font-family:'DM Sans',sans-serif;font-weight:600}
+.lang-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.lang-links a{display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:16px;background:#fff;border:1.5px solid #f0e0d0;color:#8a7b6b;font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-links a:hover{border-color:#ffb6c1;color:#ff91a4;transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .intro{padding:36px 20px 20px}
 .share-section{text-align:center;padding:28px 24px;background:#fff;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);margin-bottom:32px;border:2px solid #f5e6d3}
 #photoSection .share-section{margin-top:40px}
