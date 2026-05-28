@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gerador de Nomes para Cachorros - Encontre o Nome Perfeito para Seu Novo Cachorro</title>
+<meta name="description" content="Com dificuldade para nomear seu novo cachorro? Nosso gerador de nomes para cachorros ajuda você a encontrar o nome perfeito por gênero, estilo, raça e significado. Mais de 300 nomes cuidadosamente selecionados para todos os tipos de cachorros.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://puppynamegenerator.net/pt/">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Gerador de Nomes para Cachorros - Encontre o Nome Perfeito para Seu Novo Cachorro">
+<meta property="og:description" content="Com dificuldade para nomear seu novo cachorro? Nosso gerador de nomes para cachorros ajuda você a encontrar o nome perfeito por gênero, estilo, raça e significado. Mais de 300 nomes cuidadosamente selecionados para todos os tipos de cachorros.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://puppynamegenerator.net/pt/">
+<meta property="og:image" content="https://puppynamegenerator.net/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Gerador de Nomes para Cachorros",
+  "url":"https://puppynamegenerator.net/pt/",
+  "description":"Navegue por mais de 300 nomes de cachorros cuidadosamente selecionados organizados por gênero, raça, personalidade e significado. Ferramenta gratuita para novos donos de cachorros.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://puppynamegenerator.net/pt/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  },
+  "mainEntity":{
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Como escolho um bom nome para meu cachorro?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Escolha um nome curto com uma ou duas sílabas. Cachorros respondem melhor a nomes que terminam em vogais. Evite nomes que pareçam comandos comuns como senta, fica ou não."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Devo dar um nome humano ao meu cachorro?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Nomes humanos para cachorros são muito populares. Nomes como Charlie, Lucy, Max e Bella estão consistentemente entre os principais nomes de cachorros ano após ano."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Quando devo nomear meu novo cachorro?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Você pode nomear seu cachorro assim que o levar para casa. Muitos donos preferem passar alguns dias observando a personalidade do cachorro antes de escolher um nome."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Posso mudar o nome do meu cachorro mais tarde?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sim. Cachorros podem aprender um novo nome em qualquer idade. Use reforço positivo, diga o novo nome consistentemente e combine com guloseimas. A maioria dos cachorros se adapta em uma a duas semanas. <a href='comparison-page.html' class='no-underline'>Compare seus nomes favoritos lado a lado</a> antes de tomar a decisão final."
+        }
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+<div class="container">
+<h1>Gerador de Nomes para Cachorros</h1>
+<p>Encontre o nome perfeito para seu novo amigo peludo. Escolha uma categoria, selecione um estilo e clique em gerar.</p>
+</div>
+</header>
+
+<section class="feature-buttons">
+<div class="container">
+<button class="feature-btn active" data-feature="generator">🎲 Gerador de Nomes</button>
+<button class="feature-btn" data-feature="photo">📷 Combinação de Foto com IA</button>
+</div>
+</section>
+
+<main class="container">
+
+<div id="generatorSection">
+
+<div class="pop-gender-tabs">
+<button class="gender-tab active" data-gender="male">Nomes de Cachorros Machos</button>
+<button class="gender-tab" data-gender="female">Nomes de Cachorros Fêmeas</button>
+</div>
+
+<div class="pop-breed-row">
+<span class="filter-label">Raça</span>
+<div class="filter-pills" id="breedPills"></div>
+</div>
+<div class="pop-trait-row">
+<span class="filter-label">Traço</span>
+<div class="filter-pills" id="traitPills"></div>
+</div>
+
+<button class="gen-btn" id="genBtn">Gerar Nomes</button>
+
+<section class="results">
+<div class="name-grid" id="nameGrid"></div>
+</section>
+
+<div class="quick-links">
+<a href="popular-puppy-names.html" class="quick-link-btn">Nomes Populares para Cachorros</a>
+</div>
+
+<section class="share-section" aria-label="Compartilhe esta ferramenta">
+<h3>Compartilhe com outros pais de cachorros</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Facebook"><title>Logo do Facebook</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Encontrar%20o%20nome%20perfeito%20para%20cachorro%20ficou%20mais%20f%C3%A1cil!%20Experimente%20este%20gerador%20de%20nomes%20gr%C3%A1tuito%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Logo do X (Twitter)"><title>Logo do X (Twitter)</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F&description=Encontre%20o%20nome%20perfeito%20para%20seu%20novo%20cachorro!%20Mais%20de%20300%20nomes%20cuidadosamente%20selecionados%20por%20g%C3%AAnero%2C%20ra%C3%A7a%20e%20personalidade%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Pinterest"><title>Logo do Pinterest</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F&title=Gerador%20de%20Nomes%20para%20Cachorros%20Gr%C3%A1tuito%20-%20Mais%20de%20300%20Nomes%20Fofos%20de%20Cachorro" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Reddit"><title>Logo do Reddit</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Encontrar%20o%20nome%20perfeito%20para%20cachorro%20ficou%20mais%20f%C3%A1cil!%20Experimente%20este%20gerador%20de%20nomes%20gr%C3%A1tuito%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do WhatsApp"><title>Logo do WhatsApp</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copiar link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Ícone de copiar link"><title>Ícone de copiar link</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Copiar Link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Como Escolher o Nome Certo para Seu Cachorro</h2>
+<p>Nomear um novo cachorro é uma das primeiras grandes decisões que você tomará como pai de pet. O Gerador de Nomes para Cachorros tira a adivinhação disso. Escolha uma categoria acima, selecione um subestilo e você terá 24 nomes prontos para usar. Procurando algo comprovado como <strong>Max</strong> ou <strong>Bella</strong>? Ou talvez algo diferente como <strong>Zephyr</strong> ou <strong>Nyx</strong>? De qualquer forma, esta ferramenta tem você coberto.</p>
+
+<h3>Conselhos de Treinadores Profissionais de Cachorros</h3>
+<ul>
+<li><strong>Mantenha curto.</strong> Uma ou duas sílabas funcionam melhor. Cachorros percebem nomes mais curtos mais rápido durante as sessões de treinamento.</li>
+<li><strong>Termine com um som de vogal.</strong> Nomes que terminam em "y", "ie" ou "o" naturalmente chamam a atenção de um cachorro.</li>
+<li><strong>Evite nomes parecidos com comandos.</strong> "Bo" parece muito com "Não", e "Ray" pode ser confundido com "Fica".</li>
+<li><strong>Teste em voz alta.</strong> Imagine-se chamando o nome em um parque de cachorros movimentado. Se rolar naturalmente da língua, você está no caminho certo.</li>
+</ul>
+
+<h3>Nomes de Cachorros Mais Populares na América</h3>
+<p>Pesquisas recentes do <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a> mostram que <strong>Luna</strong>, <strong>Charlie</strong>, <strong>Cooper</strong>, <strong>Lucy</strong>, <strong>Milo</strong>, <strong>Bella</strong>, <strong>Max</strong>, <strong>Daisy</strong>, <strong>Duke</strong> e <strong>Winston</strong> lideram o ranking. Nomes inspirados em comida como <strong>Mochi</strong>, <strong>Peanut</strong> e <strong>Pepper</strong> também subiram nas tabelas nos últimos anos. Navegue por nossa <a href="popular-puppy-names.html">lista completa de nomes populares para cachorros</a> para mais ideias.</p>
+</section>
+
+<section class="faq" aria-label="Perguntas frequentes">
+<h2>Perguntas Frequentes</h2>
+
+<h3>Como escolho um bom nome para meu cachorro?</h3>
+<p>Escolha um nome curto com uma ou duas sílabas. Cachorros respondem melhor a nomes que terminam em vogais. Evite nomes que pareçam comandos comuns como senta, fica ou não.</p>
+
+<h3>Devo dar um nome humano ao meu cachorro?</h3>
+<p>Nomes humanos para cachorros são muito populares. Nomes como Charlie, Lucy, Max e Bella estão consistentemente entre os principais nomes de cachorros ano após ano.</p>
+
+<h3>Quando devo nomear meu novo cachorro?</h3>
+<p>Você pode nomear seu cachorro assim que o levar para casa. Muitos donos preferem passar alguns dias observando a personalidade do cachorro antes de escolher um nome.</p>
+
+<h3>Posso mudar o nome do meu cachorro mais tarde?</h3>
+<p>Sim. Cachorros podem aprender um novo nome em qualquer idade. Use reforço positivo, diga o novo nome consistentemente e combine com guloseimas. A maioria dos cachorros se adapta em uma a duas semanas. <a href="comparison-page.html" class="no-underline">Compare seus nomes favoritos lado a lado</a> antes de tomar a decisão final.</p>
+</section>
+
+<section class="lang-switcher" aria-label="Idiomas disponíveis">
+<h3>Idiomas disponíveis</h3>
+<div class="lang-links">
+<a href="https://puppynamegenerator.net/" hreflang="en" aria-label="English">🇺🇸 English</a>
+<a href="/de/" hreflang="de" aria-label="Deutsch">🇩🇪 Deutsch</a>
+<a href="/es/" hreflang="es" aria-label="Español">🇪🇸 Español</a>
+<a href="/fr/" hreflang="fr" aria-label="Français">🇫🇷 Français</a>
+<a href="/it/" hreflang="it" aria-label="Italiano">🇮🇹 Italiano</a>
+<a href="/ru/" hreflang="ru" aria-label="Русский">🇷🇺 Русский</a>
+</div>
+</section>
+</div>
+
+</main>
+
+<section id="photoSection" class="container feature-section" style="display:none">
+<h2>📷 Combinação de Foto com IA</h2>
+<p class="section-desc">Envie uma foto do seu cachorro e analisaremos a cor e características do pelo para sugerir os nomes perfeitos.</p>
+
+<div class="photo-upload-area" id="photoUploadArea">
+<div class="upload-placeholder" id="uploadPlaceholder">
+<svg viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ícone de enviar foto"><title>Ícone de enviar foto de cachorro</title><path fill="#d4c5b5" d="M52 8H12a4 4 0 00-4 4v40a4 4 0 004 4h40a4 4 0 004-4V12a4 4 0 00-4-4zm-4 40H16V16h32v32zM24 24a4 4 0 100-8 4 4 0 000 8zm-8 20l8-10 6 8 10-14 12 16H16z"/></svg>
+<p>Arraste e solte a foto do seu cachorro aqui</p>
+<p class="upload-sub">ou clique para procurar</p>
+<input type="file" id="photoInput" accept="image/*" hidden>
+</div>
+<div class="photo-preview" id="photoPreview" style="display:none">
+<button class="photo-delete-btn" id="photoDeleteBtn" aria-label="Remover foto">&times;</button>
+<canvas id="photoCanvas" style="display:none"></canvas>
+<img id="previewImg" alt="Foto de cachorro enviada">
+<div class="detected-features" id="detectedFeatures"></div>
+<button class="gen-photo-btn" id="genPhotoBtn">Gerar Nomes da Foto</button>
+</div>
+</div>
+
+<div class="photo-results" id="photoResults" style="display:none">
+<h3>Nomes Sugeridos para Seu Cachorro</h3>
+<div class="name-grid" id="photoNameGrid"></div>
+</div>
+
+<section class="share-section" aria-label="Compartilhe esta ferramenta">
+<h3>Compartilhe com outros pais de cachorros</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Facebook"><title>Logo do Facebook</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Encontrei%20o%20nome%20mais%20fofo%20para%20meu%20cachorro%20usando%20Combina%C3%A7%C3%A3o%20de%20Foto%20com%20IA!%20Experimente%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Logo do X (Twitter)"><title>Logo do X (Twitter)</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F&description=Envie%20uma%20foto%20do%20seu%20cachorro%20e%20receba%20nomes%20sugeridos%20por%20IA%20baseados%20na%20cor%20e%20caracter%C3%ADsticas%20do%20pelo!%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Pinterest"><title>Logo do Pinterest</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F&title=Combina%C3%A7%C3%A3o%20de%20Foto%20com%20IA%20-%20Envie%20Sua%20Foto%20de%20Cachorro%20e%20Receba%20Sugest%C3%B5es%20de%20Nomes" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do Reddit"><title>Logo do Reddit</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Acabei%20de%20enviar%20a%20foto%20do%20meu%20cachorro%20e%20recebi%20as%20sugest%C3%B5es%20de%20nomes%20mais%20fofas!%20Experimente%20a%20Combina%C3%A7%C3%A3o%20de%20Foto%20com%20IA%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fpt%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo do WhatsApp"><title>Logo do WhatsApp</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copiar link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Ícone de copiar link"><title>Ícone de copiar link</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+Copiar Link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Como Funciona a Combinação de Foto com IA</h2>
+<p>Não sabe por onde começar a nomear seu cachorro? A Combinação de Foto com IA tira a adivinhação do processo. Envie uma foto clara do seu cachorro e a ferramenta analisa a cor, brilho e padrão do pelo para sugerir nomes que combinem com o visual do seu cachorro. Um cachorro com pelo dourado pode receber nomes como <strong>Mel</strong> ou <strong>Sunny</strong>, enquanto um de pelo escuro pode ter <strong>Shadow</strong> ou <strong>Midnight</strong>. É rápido, gratuito e surpreendentemente divertido.</p>
+
+<h3>Obtendo os Melhores Resultados</h3>
+<ul>
+<li><strong>Use uma foto bem iluminada.</strong> Luz natural do dia dá a leitura de cor mais precisa. Evite sombras fortes ou iluminação interna fraca.</li>
+<li><strong>Mostre o pelo completo.</strong> Uma foto da cabeça à cauda funciona melhor do que um close-up do rosto. Quanto mais pelo visível, melhor a análise.</li>
+<li><strong>Mantenha simples.</strong> Um cachorro por foto. Múltiplos cachorros no quadro podem atrapalhar a detecção de cor.</li>
+<li><strong>Tente diferentes ângulos.</strong> Se a primeira rodada de nomes não acertar, reenvie de outro ângulo. Pequenas mudanças na iluminação podem trazer novas sugestões.</li>
+</ul>
+<h3>Dicas para Escolher um Nome que Perdure</h3>
+<p>Depois de ter uma lista curta da Combinação de Foto com IA ou do Gerador de Nomes para Cachorros, reduza-a com algumas verificações práticas. De acordo com o <a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a>, os melhores nomes de cachorros têm uma ou duas sílabas e terminam com um som de vogal. Diga cada nome em voz alta cinco vezes rápido. Se ainda parecer natural, seu cachorro provavelmente aprenderá rapidamente. Evite qualquer coisa que rime com comandos comuns como "fica", "não" ou "vem". Ainda em dúvida entre dois favoritos? Use nossa <a href="comparison-page.html">ferramenta de comparação lado a lado</a> para tomar a decisão final.</p>
+</section>
+</section>
+<footer>
+<p>&copy; 2026 Gerador de Nomes para Cachorros. Todos os direitos reservados.</p>
+<nav class="footer-links">
+<a href="about.html">Sobre Nós</a>
+<a href="privacy-policy.html">Política de Privacidade</a>
+<a href="terms-of-use.html">Termos de Uso</a>
+<a href="cookie-policy.html">Política de Cookies</a>
+</nav>
+</footer>
+<script src="js/main.js?v=9" defer></script>
+<script src="js/features.js?v=9" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2BCWJ1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F2R2BCWJ1B');
+</script>
+</body>
+</html>

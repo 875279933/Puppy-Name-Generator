@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generatore di nomi per cuccioli - Trova il nome perfetto per il tuo nuovo cane</title>
+<meta name="description" content="Hai difficoltà a nominare il tuo nuovo cucciolo? Il nostro generatore di nomi per cuccioli ti aiuta a trovare il nome perfetto per sesso, stile, razza e significato. Oltre 300 nomi selezionati con cura per ogni tipo di cane.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://puppynamegenerator.net/it/">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Generatore di nomi per cuccioli - Trova il nome perfetto per il tuo nuovo cane">
+<meta property="og:description" content="Hai difficoltà a nominare il tuo nuovo cucciolo? Il nostro generatore di nomi per cuccioli ti aiuta a trovare il nome perfetto per sesso, stile, razza e significato. Oltre 300 nomi selezionati con cura per ogni tipo di cane.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://puppynamegenerator.net/it/">
+<meta property="og:image" content="https://puppynamegenerator.net/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Generatore di nomi per cuccioli",
+  "url":"https://puppynamegenerator.net/it/",
+  "description":"Sfoglia oltre 300 nomi di cuccioli selezionati con cura, organizzati per sesso, razza, personalità e significato. Strumento gratuito per nuovi proprietari di cani.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://puppynamegenerator.net/it/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  },
+  "mainEntity":{
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Come scelgo un buon nome per il mio cucciolo?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Scegli un nome corto con una o due sillabe. I cani rispondono meglio ai nomi che terminano con una vocale. Evita nomi che assomigliano a comandi comuni come seduto, fermo o no."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Dovrei dare un nome umano al mio cucciolo?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"I nomi umani per i cani sono molto popolari negli Stati Uniti. Nomi come Charlie, Lucy, Max e Bella sono costantemente tra i migliori nomi per cani anno dopo anno."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Quando dovrei nominare il mio nuovo cucciolo?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Puoi nominare il tuo cucciolo non appena lo porti a casa. Molti proprietari preferiscono trascorrere alcuni giorni osservando la personalità del cucciolo prima di decidere un nome."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Posso cambiare il nome del mio cane più tardi?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sì. I cani possono imparare un nuovo nome a qualsiasi età. Usa il rinforzo positivo, pronuncia il nuovo nome in modo coerente e abbinalo a dei premi. La maggior parte dei cani si adatta entro una o due settimane."
+        }
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+<div class="container">
+<h1>Generatore di nomi per cuccioli</h1>
+<p>Trova il nome perfetto per il tuo nuovo amico a quattro zampe. Scegli una categoria, seleziona uno stile e clicca su genera.</p>
+</div>
+</header>
+
+<section class="feature-buttons">
+<div class="container">
+<button class="feature-btn active" data-feature="generator">🎲 Generatore di nomi</button>
+<button class="feature-btn" data-feature="photo">📷 Corrispondenza foto IA</button>
+</div>
+</section>
+
+<main class="container">
+
+<div id="generatorSection">
+
+<div class="pop-gender-tabs">
+<button class="gender-tab active" data-gender="male">Nomi per cuccioli maschi</button>
+<button class="gender-tab" data-gender="female">Nomi per cuccioli femmine</button>
+</div>
+
+<div class="pop-breed-row">
+<span class="filter-label">Razza</span>
+<div class="filter-pills" id="breedPills"></div>
+</div>
+<div class="pop-trait-row">
+<span class="filter-label">Caratteristica</span>
+<div class="filter-pills" id="traitPills"></div>
+</div>
+
+<button class="gen-btn" id="genBtn">Genera nomi</button>
+
+<section class="results">
+<div class="name-grid" id="nameGrid"></div>
+</section>
+
+<div class="quick-links">
+<a href="popular-puppy-names.html" class="quick-link-btn">Nomi popolari per cuccioli</a>
+</div>
+
+<section class="share-section" aria-label="Condividi questo strumento">
+<h3>Condividi con altri genitori di cuccioli</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Facebook"><title>Logo Facebook</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Trovare%20il%20nome%20perfetto%20per%20il%20tuo%20cucciolo%20%C3%A8%20diventato%20pi%C3%B9%20facile!%20Prova%20questo%20generatore%20di%20nomi%20per%20cuccioli%20gratuito%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Logo X (Twitter)"><title>Logo X (Twitter)</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F&description=Trova%20il%20nome%20perfetto%20per%20il%20tuo%20nuovo%20cucciolo!%20300%2B%20nomi%20selezionati%20con%20cura%20per%20sesso%2C%20razza%20e%20personalit%C3%A1%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Pinterest"><title>Logo Pinterest</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F&title=Generatore%20di%20nomi%20per%20cuccioli%20gratuito%20-%20300%2B%20nomi%20carini%20per%20cani" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Reddit"><title>Logo Reddit</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Trovare%20il%20nome%20perfetto%20per%20il%20tuo%20cucciolo%20%C3%A8%20diventato%20pi%C3%B9%20facile!%20Prova%20questo%20generatore%20di%20nomi%20per%20cuccioli%20gratuito%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo WhatsApp"><title>Logo WhatsApp</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copia link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Icona copia link"><title>Icona copia link</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9 2-2-2zm0 16H8V7h11v14z"/></svg>
+Copia link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Come scegliere il nome giusto per il tuo cucciolo</h2>
+<p>Nominare un nuovo cane è una delle prime grandi decisioni che prenderai come genitore di animali domestici. Il Generatore di nomi per cuccioli toglie il lavoro di congettura. Scegli una categoria sopra, seleziona un sottostile e otterrai 24 nomi pronti per l'uso. Cerchi qualcosa di collaudato come <strong>Max</strong> o <strong>Bella</strong>? O forse qualcosa di insolito come <strong>Zefiro</strong> o <strong>Nyx</strong>? Qualunque cosa sia, questo strumento ti copre.</p>
+
+<h3>Consigli di addestratori professionisti di cani</h3>
+<ul>
+<li><strong>Tienilo corto.</strong> Una o due sillabe funzionano meglio. I cani recepiscono nomi più corti più velocemente durante le sessioni di addestramento.</li>
+<li><strong>Termina con un suono vocalico.</strong> I nomi che terminano con "y," "ie," o "o" catturano naturalmente l'orecchio di un cane.</li>
+<li><strong>Evita nomi di tipo comando.</strong> "Bo" suona molto come "No," e "Ray" può essere confuso con "Fermo."</li>
+<li><strong>Provalo ad alta voce.</strong> Immagina te stesso chiamare il nome attraverso un parco per cani affollato. Se scorre bene sulla lingua, hai qualcosa di buono.</li>
+</ul>
+
+<h3>Nomi di cani più popolari in America</h3>
+<p>Ricerche recenti dell'<a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a> mostrano che <strong>Luna</strong>, <strong>Charlie</strong>, <strong>Cooper</strong>, <strong>Lucy</strong>, <strong>Milo</strong>, <strong>Bella</strong>, <strong>Max</strong>, <strong>Daisy</strong>, <strong>Duke</strong> e <strong>Winston</strong> sono in testa. Nomi ispirati al cibo come <strong>Mochi</strong>, <strong>Peanut</strong> e <strong>Pepper</strong> sono anche saliti nelle classifiche negli ultimi anni. Sfoglia la nostra <a href="popular-puppy-names.html">lista completa di nomi popolari per cuccioli</a> per più idee.</p>
+</section>
+
+<section class="faq" aria-label="Domande frequenti">
+<h2>Domande frequenti</h2>
+
+<h3>Come scelgo un buon nome per il mio cucciolo?</h3>
+<p>Scegli un nome corto con una o due sillabe. I cani rispondono meglio ai nomi che terminano con una vocale. Evita nomi che assomigliano a comandi comuni come seduto, fermo o no.</p>
+
+<h3>Dovrei dare un nome umano al mio cucciolo?</h3>
+<p>I nomi umani per i cani sono molto popolari negli Stati Uniti. Nomi come Charlie, Lucy, Max e Bella sono costantemente tra i migliori nomi per cani anno dopo anno.</p>
+
+<h3>Quando dovrei nominare il mio nuovo cucciolo?</h3>
+<p>Puoi nominare il tuo cucciolo non appena lo porti a casa. Molti proprietari preferiscono trascorrere alcuni giorni osservando la personalità del cucciolo prima di decidere un nome.</p>
+
+<h3>Posso cambiare il nome del mio cane più tardi?</h3>
+<p>Sì. I cani possono imparare un nuovo nome a qualsiasi età. Usa il rinforzo positivo, pronuncia il nuovo nome in modo coerente e abbinalo a dei premi. La maggior parte dei cani si adatta entro una o due settimane. <a href="comparison-page.html" class="no-underline">Confronta i tuoi nomi preferiti fianco a fianco</a> prima di prendere la decisione finale.</p>
+</section>
+
+<section class="lang-switcher" aria-label="Lingue disponibili">
+<h3>Lingue disponibili</h3>
+<div class="lang-links">
+<a href="https://puppynamegenerator.net/" hreflang="en" aria-label="English">🇺🇸 English</a>
+<a href="/de/" hreflang="de" aria-label="Deutsch">🇩🇪 Deutsch</a>
+<a href="/es/" hreflang="es" aria-label="Español">🇪🇸 Español</a>
+<a href="/fr/" hreflang="fr" aria-label="Français">🇫🇷 Français</a>
+<a href="/pt/" hreflang="pt" aria-label="Português">🇵🇹 Português</a>
+<a href="/ru/" hreflang="ru" aria-label="Русский">🇷🇺 Русский</a>
+</div>
+</section>
+</div>
+
+</main>
+
+<section id="photoSection" class="container feature-section" style="display:none">
+<h2>📷 Corrispondenza foto IA</h2>
+<p class="section-desc">Carica una foto del tuo cucciolo e analizzeremo il colore del pelo e le sue caratteristiche per suggerire i nomi perfetti.</p>
+
+<div class="photo-upload-area" id="photoUploadArea">
+<div class="upload-placeholder" id="uploadPlaceholder">
+<svg viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Icona caricamento foto"><title>Icona caricamento foto cucciolo</title><path fill="#d4c5b5" d="M52 8H12a4 4 0 00-4 4v40a4 4 0 004 4h40a4 4 0 004-4V12a4 4 0 00-4-4zm-4 40H16V16h32v32zM24 24a4 4 0 100-8 4 4 0 000 8zm-8 20l8-10 6 8 10-14 12 16H16z"/></svg>
+<p>Trascina e rilascia la foto del tuo cucciolo qui</p>
+<p class="upload-sub">oppure clicca per cercare</p>
+<input type="file" id="photoInput" accept="image/*" hidden>
+</div>
+<div class="photo-preview" id="photoPreview" style="display:none">
+<button class="photo-delete-btn" id="photoDeleteBtn" aria-label="Rimuovi foto">&times;</button>
+<canvas id="photoCanvas" style="display:none"></canvas>
+<img id="previewImg" alt="Foto cucciolo caricata">
+<div class="detected-features" id="detectedFeatures"></div>
+<button class="gen-photo-btn" id="genPhotoBtn">Genera nomi dalla foto</button>
+</div>
+</div>
+
+<div class="photo-results" id="photoResults" style="display:none">
+<h3>Nomi suggeriti per il tuo cucciolo</h3>
+<div class="name-grid" id="photoNameGrid"></div>
+</div>
+
+<section class="share-section" aria-label="Condividi questo strumento">
+<h3>Condividi con altri genitori di cuccioli</h3>
+<div class="share-buttons">
+<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Facebook">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Facebook"><title>Logo Facebook</title><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+Facebook
+</a>
+<a class="share-btn share-twitter" href="https://twitter.com/intent/tweet?text=Trovato%20il%20nome%20pi%C3%B9%20carino%20per%20il%20mio%20cucciolo%20con%20la%20corrispondenza%20foto%20IA!%20Provalo%20%F0%9F%90%B6&url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su X (Twitter)">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Logo X (Twitter)"><title>Logo X (Twitter)</title><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+X
+</a>
+<a class="share-btn share-pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F&description=Carica%20una%20foto%20del%20tuo%20cucciolo%20e%20ottieni%20nomi%20suggeriti%20dall%27IA%20basati%20sul%20colore%20del%20pelo%20e%20le%20caratteristiche!%20%F0%9F%90%B6" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Pinterest">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Pinterest"><title>Logo Pinterest</title><path fill="currentColor" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01-.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+Pinterest
+</a>
+<a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F&title=Corrispondenza%20foto%20IA%20-%20Carica%20la%20foto%20del%20tuo%20cucciolo%20e%20ottieni%20suggerimenti%20di%20nomi" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Reddit">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo Reddit"><title>Logo Reddit</title><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1.042.52c0 2.694-3.13 4.87-7.004 4.87-3.876 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.849 1.849 0 0 1 4.06 12.1c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.887 2.878-1.435 4.674-1.487.088-.423.202-.843.326-1.256l-.879.183a1.25 1.25 0 0 1-1.49-.966 1.25 1.25 0 0 1.967-1.49l2.744-.575c.125-.025.25-.037.376-.037.125 0 .25.012.376.037l2.744.575a1.25 1.25 0 0 1.967 1.49 1.25 1.25 0 0 1-1.49.967l-.879-.183zM7.28 12.62a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm4.72 0a.625.625 0 0 0-.625.625c0 .345.28.625.625.625.345 0 .625-.28.625-.625a.625.625 0 0 0-.625-.625zm2.24 2.438c-.49.49-1.38.812-2.24.812-.86 0-1.75-.322-2.24-.812a.125.125 0 0 0-.177 0 .125.125 0 0 0 0 .177c.54.54 1.5.875 2.417.875.917 0 1.877-.335 2.417-.875a.125.125 0 0 0 0-.177.125.125 0 0 0-.177 0z"/></svg>
+Reddit
+</a>
+<a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Ho%20appena%20caricato%20la%20foto%20del%20mio%20cucciolo%20e%20ho%20ottenuto%20i%20nomi%20pi%C3%B9%20carini!%20Prova%20la%20corrispondenza%20foto%20IA%20%F0%9F%90%B6%20https%3A%2F%2Fpuppynamegenerator.net%2Fit%2F" target="_blank" rel="noopener noreferrer" aria-label="Condividi su WhatsApp">
+<svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-label="Logo WhatsApp"><title>Logo WhatsApp</title><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a class="share-btn share-copy" href="javascript:void(0)" onclick="copyLink(this)" aria-label="Copia link">
+<svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="Icona copia link"><title>Icona copia link</title><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9 2-2-2zm0 16H8V7h11v14z"/></svg>
+Copia link
+</a>
+</div>
+</section>
+
+<section class="intro">
+<h2>Come funziona la corrispondenza foto IA</h2>
+<p>Non sai da dove iniziare a nominare il tuo cucciolo? La corrispondenza foto IA toglie il lavoro di congettura dal processo. Carica una foto chiara del tuo cane, e lo strumento analizza il colore del pelo, la luminosità e il motivo per suggerire nomi che corrispondono all'aspetto del tuo cucciolo. Un cucciolo con pelo dorato potrebbe ottenere nomi come <strong>Honey</strong> o <strong>Sunny</strong>, mentre uno con pelo scuro potrebbe vedere <strong>Shadow</strong> o <strong>Midnight</strong>. È veloce, gratuito e sorprendentemente divertente.</p>
+
+<h3>Ottenere i migliori risultati</h3>
+<ul>
+<li><strong>Usa una foto ben illuminata.</strong> La luce naturale del giorno dà la lettura del colore più accurata. Evita ombre pesanti o illuminazione interna scura.</li>
+<li><strong>Mostra l'intero pelo.</strong> Uno scatto dalla testa alla coda funziona meglio di un primo piano del viso. Più pelo visibile, migliore è l'analisi.</li>
+<li><strong>Tienilo semplice.</strong> Un cucciolo per foto. Più cani nell'immagine possono disturbare il rilevamento del colore.</li>
+<li><strong>Prova angoli diversi.</strong> Se il primo giro di nomi non funziona, carica di nuovo da un altro angolo. Piccoli cambi di luce possono far emergere nuovi suggerimenti.</li>
+</ul>
+<h3>Consigli per scegliere un nome che rimane</h3>
+<p>Una volta che hai una shortlist dalla corrispondenza foto IA o dal Generatore di nomi per cuccioli, riducila con alcuni controlli pratici. Secondo l'<a href="https://www.akc.org" target="_blank" rel="noopener noreferrer nofollow">American Kennel Club</a>, i migliori nomi per cuccioli sono di una o due sillabe e terminano con un suono vocalico. Pronuncia ogni nome ad alta voce cinque volte velocemente. Se sembra ancora naturale, il tuo cane probabilmente lo imparerà velocemente. Evita tutto ciò che fa rima con comandi comuni come "fermo," "no" o "vieni." Ancora indeciso tra due preferiti? Usa il nostro <a href="comparison-page.html">strumento di confronto fianco a fianco</a> per prendere la decisione finale.</p>
+</section>
+</section>
+
+<footer>
+<p>&copy; 2026 Generatore di nomi per cuccioli. Tutti i diritti riservati.</p>
+<nav class="footer-links">
+<a href="about.html">Chi siamo</a>
+<a href="privacy-policy.html">Informativa sulla privacy</a>
+<a href="terms-of-use.html">Termini di utilizzo</a>
+<a href="cookie-policy.html">Informativa sui cookie</a>
+</nav>
+</footer>
+
+<script src="js/main.js?v=9" defer></script>
+<script src="js/features.js?v=9" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2BCWJ1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F2R2BCWJ1B');
+</script>
+</body>
+</html>
