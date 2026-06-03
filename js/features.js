@@ -799,7 +799,60 @@ renderFilteredNames();
 
 const genBtn=document.getElementById('genBtn');
 if(genBtn){
-genBtn.addEventListener('click',renderFilteredNames);
+  genBtn.addEventListener('click',()=>{
+    // 如果当前是默认状态，重新生成受欢迎的名字
+    if(popState.gender==='male' && popState.breed==='all' && popState.trait==='all'){
+      const grid=document.getElementById('nameGrid');
+      const names = [
+        ["Max","loving max"],
+        ["Charlie","friendly charlie"],
+        ["Cooper","cooper cuddles"],
+        ["Milo","sweet cuddle bug"],
+        ["Duke","duke energy"],
+        ["Winston","winston charming"],
+        ["Bear","big cuddly bear"],
+        ["Teddy","teddy bear cuddle"],
+        ["Leo","lion cuddle"],
+        ["Archie","archie cuddle"],
+        ["Ollie","cuddly ollie"],
+        ["Louie","louie cuddles"],
+        ["Theo","theo cuddle"],
+        ["Finn","fair and playful"],
+        ["Jack","god is gracious"],
+        ["Sam","loving sam"],
+        ["Ben","loving ben"],
+        ["Henry","ruler of home"],
+        ["George","farmer"],
+        ["Buddy","best friend"],
+        ["Rocky","rock solid energy"],
+        ["Jasper","gentle jasper"],
+        ["Asher","gentle asher"],
+        ["Beau","gentle beau"]
+      ];
+      // 随机打乱顺序
+      const shuffledNames = [...names].sort(() => Math.random() - 0.5);
+      
+      const favs = getFavs();
+      grid.innerHTML = shuffledNames.map(n => {
+        const liked = favs.includes(n[0]);
+        return `<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
+      }).join('');
+      
+      // 添加点击事件
+      grid.querySelectorAll('.heart').forEach(h => {
+        h.addEventListener('click', () => {
+          const name = h.dataset.name;
+          const isLiked = h.classList.toggle('liked');
+          saveFav(name, isLiked);
+          if (typeof updateDlBtn === 'function') updateDlBtn();
+          if (typeof updatePhotoDlBtn === 'function') updatePhotoDlBtn();
+        });
+      });
+    } else {
+      // 其他情况使用原来的逻辑
+      renderFilteredNames();
+    }
+  });
 }
 
 renderBreedPills();
@@ -863,7 +916,65 @@ console.log('Filter state:', { gender: g, breed: b, trait: t });
 // 8. 选trait下的 all → 显示该 breed 下所有 trait 的名字
 // ===========================================
 
-if (b !== 'all' && t !== 'all') {
+// 检查是否是默认状态：Male + All Breed + All Trait
+const isDefaultMaleState = (g === 'male' && b === 'all' && t === 'all');
+
+if (isDefaultMaleState) {
+  // 如果是默认状态，检查grid是否已经有内容
+  if (grid.innerHTML.trim() !== '') {
+    // 如果已经有内容（页面加载时的默认HTML），则保留现有内容
+    console.log('Case: Default male state with existing HTML content, keeping it');
+    return;
+  } else {
+    // 如果没有内容（比如从Female切换回Male时），生成默认的受欢迎名字
+    console.log('Case: Default male state without content, generating popular names');
+    names = [
+      ["Max","loving max"],
+      ["Charlie","friendly charlie"],
+      ["Cooper","cooper cuddles"],
+      ["Milo","sweet cuddle bug"],
+      ["Duke","duke energy"],
+      ["Winston","winston charming"],
+      ["Bear","big cuddly bear"],
+      ["Teddy","teddy bear cuddle"],
+      ["Leo","lion cuddle"],
+      ["Archie","archie cuddle"],
+      ["Ollie","cuddly ollie"],
+      ["Louie","louie cuddles"],
+      ["Theo","theo cuddle"],
+      ["Finn","fair and playful"],
+      ["Jack","god is gracious"],
+      ["Sam","loving sam"],
+      ["Ben","loving ben"],
+      ["Henry","ruler of home"],
+      ["George","farmer"],
+      ["Buddy","best friend"],
+      ["Rocky","rock solid energy"],
+      ["Jasper","gentle jasper"],
+      ["Asher","gentle asher"],
+      ["Beau","gentle beau"]
+    ];
+    // 直接生成HTML并返回，不需要去重和随机打乱
+    const favs = getFavs();
+    grid.innerHTML = names.map(n => {
+      const liked = favs.includes(n[0]);
+      return `<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
+    }).join('');
+    
+    // 添加点击事件
+    grid.querySelectorAll('.heart').forEach(h => {
+      h.addEventListener('click', () => {
+        const name = h.dataset.name;
+        const isLiked = h.classList.toggle('liked');
+        saveFav(name, isLiked);
+        if (typeof updateDlBtn === 'function') updateDlBtn();
+        if (typeof updatePhotoDlBtn === 'function') updatePhotoDlBtn();
+      });
+    });
+    
+    return;
+  }
+} else if (b !== 'all' && t !== 'all') {
   // Case 1: 选择了特定 breed + trait → 只显示该组合的名字
   console.log('Case 1: Specific breed + trait');
   if (POP_NAMES[g] && POP_NAMES[g][b] && POP_NAMES[g][b][t]) {
