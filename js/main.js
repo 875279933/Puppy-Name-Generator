@@ -60,4 +60,37 @@ setTimeout(()=>{el.classList.remove('copied');el.innerHTML='<svg viewBox="0 0 24
 })
 }
 
-if(document.getElementById('nameGrid'))updateDlBtn();
+function bindHearts(){
+// 使用事件委托代替直接绑定，确保所有爱心元素都能响应点击
+const grid=document.getElementById('nameGrid');
+if(!grid)return;
+
+// 先移除已有的事件监听器
+grid.removeEventListener('click',heartClickHandler);
+
+// 添加新的事件监听器
+grid.addEventListener('click',heartClickHandler);
+}
+
+function heartClickHandler(e){
+const heart=e.target.closest('.heart');
+if(!heart)return;
+
+e.stopPropagation();
+const name=heart.dataset.name;
+const isLiked=heart.classList.toggle('liked');
+saveFav(name,isLiked);
+updateDlBtn();
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded',()=>{
+if(document.getElementById('nameGrid')){
+updateDlBtn();
+// 初始化爱心状态
+const favs=getFavs();
+document.querySelectorAll('.heart').forEach(h=>{
+if(favs.includes(h.dataset.name))h.classList.add('liked');
+});
+}
+});

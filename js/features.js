@@ -1,3 +1,19 @@
+// Utility functions for favorites
+function getFavs(){try{return JSON.parse(localStorage.getItem('pupFavs'))||[]}catch(e){return[]}}
+function saveFav(name,add){const f=getFavs();if(add){if(!f.includes(name))f.push(name)}else{const i=f.indexOf(name);if(i>-1)f.splice(i,1)}localStorage.setItem('pupFavs',JSON.stringify(f))}
+
+// 统一的爱心点击事件处理函数
+function handleHeartClick(e){
+const heart=e.target.closest('.heart');
+if(!heart)return;
+
+const name=heart.dataset.name;
+const isLiked=heart.classList.toggle('liked');
+saveFav(name,isLiked);
+if(typeof updateDlBtn==='function')updateDlBtn();
+if(typeof updatePhotoDlBtn==='function')updatePhotoDlBtn();
+}
+
 // Feature toggle
 document.querySelectorAll('.feature-btn').forEach(btn=>{
 btn.addEventListener('click',()=>{
@@ -838,16 +854,8 @@ if(genBtn){
         return `<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
       }).join('');
       
-      // 添加点击事件
-      grid.querySelectorAll('.heart').forEach(h => {
-        h.addEventListener('click', () => {
-          const name = h.dataset.name;
-          const isLiked = h.classList.toggle('liked');
-          saveFav(name, isLiked);
-          if (typeof updateDlBtn === 'function') updateDlBtn();
-          if (typeof updatePhotoDlBtn === 'function') updatePhotoDlBtn();
-        });
-      });
+      // 事件委托已经在页面加载时绑定，这里不需要再单独绑定
+      // handleHeartClick函数在后面定义，这里不能直接引用
     } else {
       // 其他情况使用原来的逻辑
       renderFilteredNames();
@@ -961,16 +969,7 @@ if (isDefaultMaleState) {
       return `<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
     }).join('');
     
-    // 添加点击事件
-    grid.querySelectorAll('.heart').forEach(h => {
-      h.addEventListener('click', () => {
-        const name = h.dataset.name;
-        const isLiked = h.classList.toggle('liked');
-        saveFav(name, isLiked);
-        if (typeof updateDlBtn === 'function') updateDlBtn();
-        if (typeof updatePhotoDlBtn === 'function') updatePhotoDlBtn();
-      });
-    });
+    // 事件委托已经在页面加载时绑定，这里不需要再单独绑定
     
     return;
   }
@@ -1041,15 +1040,7 @@ grid.innerHTML = names.map(n => {
   return `<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
 }).join('');
 
-grid.querySelectorAll('.heart').forEach(h => {
-  h.addEventListener('click', () => {
-    const name = h.dataset.name;
-    const isLiked = h.classList.toggle('liked');
-    saveFav(name, isLiked);
-    if (typeof updateDlBtn === 'function') updateDlBtn();
-    if (typeof updatePhotoDlBtn === 'function') updatePhotoDlBtn();
-  });
-});
+// 事件委托已经在页面加载时绑定，这里不需要再单独绑定
 }
 
 // AI Photo Match
@@ -1336,6 +1327,23 @@ return true;
 const shuffled=[...uniquePool].sort(()=>Math.random()-0.5);
 return shuffled.slice(0,16);
 }
+
+// 页面加载完成后初始化事件委托
+document.addEventListener('DOMContentLoaded',()=>{
+const grid=document.getElementById('nameGrid');
+if(!grid)return;
+
+// 先移除可能存在的事件监听器
+grid.removeEventListener('click',handleHeartClick);
+// 添加事件委托
+grid.addEventListener('click',handleHeartClick);
+
+// 初始化爱心状态
+const favs=getFavs();
+grid.querySelectorAll('.heart').forEach(h=>{
+if(favs.includes(h.dataset.name))h.classList.add('liked');
+});
+});
 
 function showPhotoNames(names){
 const favs=getFavs();
