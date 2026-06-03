@@ -1,5 +1,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;color:#4a3f35;background:#fff8f0;line-height:1.6}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#4a3f35;background:#fff8f0;line-height:1.6}
+html{font-display:swap}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/dmsans/v11/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriAWCrCBamC.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriASitCBamC.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDXbtM.woff2) format('woff2')}
+body.fonts-loaded{font-family:'DM Sans',sans-serif}
 .back-link{margin-bottom:16px;padding-top:24px}
 .back-link a{color:#e25563;text-decoration:none;font-weight:600;font-size:.95rem;transition:color .2s}
 .back-link a:hover{color:#c9434f}
@@ -26,9 +33,11 @@ header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
 .gen-btn{display:block;margin:0 auto 32px;padding:15px 48px;border:none;border-radius:30px;background:linear-gradient(135deg,#ff91a4 0%,#e25563 100%);color:#fff;font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(226,85,99,.3)}
 .gen-btn:hover{background:linear-gradient(135deg,#e87da0 0%,#c94452 100%);box-shadow:0 6px 18px rgba(226,85,99,.35);transform:translateY(-2px)}
 .gen-btn:active{box-shadow:0 2px 8px rgba(255,145,164,.2);transform:translateY(0)}
-.results{margin-bottom:40px}
+.results{margin-bottom:40px;min-height:320px}
 .name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.name-card{background:#fff;border-radius:16px;padding:16px 10px 14px;text-align:center;transition:transform .15s,box-shadow .15s;cursor:default;border:1.5px solid #f5e6d3;position:relative}
+.name-card{background:#fff;border-radius:16px;padding:16px 10px 14px;text-align:center;transition:transform .15s,box-shadow .15s;cursor:default;border:1.5px solid #f5e6d3;position:relative;aspect-ratio:4/3}
+#breedPills,#traitPills{min-height:42px}
+.filter-pills:empty::after{content:'Loading...';color:#c4b8a8;font-style:italic;font-size:.85rem;padding:8px 0}
 .name-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
 .name-card .heart{position:absolute;top:8px;right:8px;width:22px;height:22px;cursor:pointer;transition:transform .15s}
 .name-card .heart:hover{transform:scale(1.2)}
@@ -99,7 +108,10 @@ footer{text-align:center;padding:20px;color:#c4b5a5;font-size:.85rem;border-top:
 .filter-pill{padding:8px 18px;border-radius:20px;border:1.5px solid #e8ddd0;background:#f8f4f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;color:#8a7b6b;transition:all .2s}
 .filter-pill:hover{border-color:#ffc8dc;background:#fff}
 .filter-pill.active{background:#ff91a4;color:#fff;border-color:#ff91a4}
-.photo-upload-area{background:#fff;border-radius:24px;padding:32px;text-align:center;border:2px solid #f5e6d3;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.photo-upload-area{background:#fff;border-radius:24px;padding:32px;text-align:center;border:2px solid #f5e6d3;box-shadow:0 4px 20px rgba(0,0,0,.05);aspect-ratio:16/10;min-height:320px}
+.upload-placeholder,.photo-preview{min-height:300px}
+#previewImg{max-width:100%;height:auto;aspect-ratio:16/10;object-fit:contain}
+.photo-results{min-height:280px}
 .upload-placeholder{padding:48px 20px;cursor:pointer;transition:background .2s}
 .upload-placeholder:hover{background:#faf5f0}
 .upload-placeholder svg{margin-bottom:16px}
