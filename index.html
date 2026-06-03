@@ -9,59 +9,9 @@
 <link rel="canonical" href="https://puppynamegenerator.net/">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;color:#4a3f35;background:#fff8f0;line-height:1.6}
-.container{max-width:860px;margin:0 auto;padding:0 20px}
-header{text-align:center;padding:48px 20px 32px;position:relative}
-header h1{font-size:2.4rem;color:#3d2e24;margin-bottom:10px;font-family:'Playfair Display',serif;line-height:1.25}
-header h1::before{content:'🐾 ';font-size:1.8rem}
-header h1::after{content:' 🐾';font-size:1.8rem}
-header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
-.feature-buttons{padding:16px 0;text-align:center}
-.feature-buttons .container{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.feature-btn{padding:12px 28px;border:2px solid #f0e0d0;border-radius:28px;background:#fff8f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;color:#8a7b6b;transition:all .2s}
-.feature-btn:hover{border-color:#e8c8a8;background:#fff;transform:translateY(-1px)}
-.feature-btn.active{background:linear-gradient(135deg,#ff91a4,#e25563);color:#fff;border-color:#e25563;box-shadow:0 4px 12px rgba(226,85,99,.25)}
-.pop-gender-tabs{display:flex;gap:0;margin-bottom:20px;border-radius:28px;overflow:hidden;border:2px solid #f0e0d0}
-.gender-tab{flex:1;padding:14px 20px;border:none;background:#fff8f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#8a7b6b;transition:all .2s;text-align:center}
-.gender-tab:hover{background:#fff}
-.gender-tab.active{background:linear-gradient(135deg,#ff91a4,#e25563);color:#fff}
-.pop-breed-row,.pop-trait-row{background:#fff;border-radius:20px;padding:18px 22px;border:2px solid #f5e6d3;box-shadow:0 2px 12px rgba(0,0,0,.03);margin-bottom:14px}
-.filter-label{display:block;font-size:.95rem;font-weight:700;color:#3d2e24;margin-bottom:10px;font-family:'DM Sans',sans-serif}
-.filter-pills{display:flex;flex-wrap:wrap;gap:8px}
-.filter-pill{padding:8px 18px;border-radius:20px;border:1.5px solid #e8ddd0;background:#f8f4f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;color:#8a7b6b;transition:all .2s}
-.filter-pill:hover{border-color:#ffc8dc;background:#fff}
-.filter-pill.active{background:#ff91a4;color:#fff;border-color:#ff91a4}
-.gen-btn{display:block;margin:0 auto 32px;padding:15px 48px;border:none;border-radius:30px;background:linear-gradient(135deg,#ff91a4 0%,#e25563 100%);color:#fff;font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(226,85,99,.3)}
-.gen-btn:hover{background:linear-gradient(135deg,#e87da0 0%,#c94452 100%);box-shadow:0 6px 18px rgba(226,85,99,.35);transform:translateY(-2px)}
-.results{margin-bottom:40px}
-.name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.name-card{background:#fff;border-radius:16px;padding:16px 10px 14px;text-align:center;transition:transform .15s,box-shadow .15s;cursor:default;border:1.5px solid #f5e6d3;position:relative}
-.name-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-.name-card .heart{position:absolute;top:8px;right:8px;width:22px;height:22px;cursor:pointer;transition:transform .15s}
-.name-card .heart:hover{transform:scale(1.2)}
-.name-card .heart svg{width:100%;height:100%}
-.name-card .heart svg path{fill:#f0e0d0;stroke:#e8c8a8;stroke-width:2;transition:fill .2s}
-.name-card .heart.liked svg path{fill:#e25563;stroke:#e25563}
-.name-card .name{font-weight:700;font-size:1.2rem;transition:color .25s}
-.name-card .name.color-popular{color:#5e8a5e}
-.name-card .meaning{font-size:.78rem;color:#a89a8a;margin-top:4px}
-.quick-links{text-align:center;padding:0 0 28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.quick-link-btn{display:inline-block;padding:10px 28px;border-radius:24px;background:#ff91a4;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
-.quick-link-btn:hover{background:#e25563;transform:translateY(-1px)}
-@media(max-width:600px){
-header h1{font-size:1.8rem}
-.name-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-}
-</style>
-<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/style.css">
 <meta property="og:title" content="Puppy Name Generator - Find the Perfect Name for Your New Dog">
 <meta property="og:description" content="Struggling to name your new puppy? Our puppy name generator helps you find the perfect name by gender, style, breed, and meaning. Over 300 handpicked names for every type of dog.">
 <meta property="og:type" content="website">
@@ -160,7 +110,32 @@ header h1{font-size:1.8rem}
 <button class="gen-btn" id="genBtn">Generate Names</button>
 
 <section class="results">
-<div class="name-grid" id="nameGrid"></div>
+<div class="name-grid" id="nameGrid">
+<div class="name-card"><span class="heart" data-name="Max" aria-label="Favorite Max"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Max</div><div class="meaning">loving max</div></div>
+<div class="name-card"><span class="heart" data-name="Charlie" aria-label="Favorite Charlie"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Charlie</div><div class="meaning">friendly charlie</div></div>
+<div class="name-card"><span class="heart" data-name="Cooper" aria-label="Favorite Cooper"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Cooper</div><div class="meaning">cooper cuddles</div></div>
+<div class="name-card"><span class="heart" data-name="Milo" aria-label="Favorite Milo"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Milo</div><div class="meaning">sweet cuddle bug</div></div>
+<div class="name-card"><span class="heart" data-name="Duke" aria-label="Favorite Duke"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Duke</div><div class="meaning">duke energy</div></div>
+<div class="name-card"><span class="heart" data-name="Winston" aria-label="Favorite Winston"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Winston</div><div class="meaning">winston charming</div></div>
+<div class="name-card"><span class="heart" data-name="Bear" aria-label="Favorite Bear"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Bear</div><div class="meaning">big cuddly bear</div></div>
+<div class="name-card"><span class="heart" data-name="Teddy" aria-label="Favorite Teddy"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Teddy</div><div class="meaning">teddy bear cuddle</div></div>
+<div class="name-card"><span class="heart" data-name="Leo" aria-label="Favorite Leo"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Leo</div><div class="meaning">lion cuddle</div></div>
+<div class="name-card"><span class="heart" data-name="Archie" aria-label="Favorite Archie"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Archie</div><div class="meaning">archie cuddle</div></div>
+<div class="name-card"><span class="heart" data-name="Ollie" aria-label="Favorite Ollie"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Ollie</div><div class="meaning">cuddly ollie</div></div>
+<div class="name-card"><span class="heart" data-name="Louie" aria-label="Favorite Louie"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Louie</div><div class="meaning">louie cuddles</div></div>
+<div class="name-card"><span class="heart" data-name="Theo" aria-label="Favorite Theo"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Theo</div><div class="meaning">theo cuddle</div></div>
+<div class="name-card"><span class="heart" data-name="Finn" aria-label="Favorite Finn"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Finn</div><div class="meaning">fair and playful</div></div>
+<div class="name-card"><span class="heart" data-name="Jack" aria-label="Favorite Jack"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Jack</div><div class="meaning">god is gracious</div></div>
+<div class="name-card"><span class="heart" data-name="Sam" aria-label="Favorite Sam"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Sam</div><div class="meaning">loving sam</div></div>
+<div class="name-card"><span class="heart" data-name="Ben" aria-label="Favorite Ben"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Ben</div><div class="meaning">loving ben</div></div>
+<div class="name-card"><span class="heart" data-name="Henry" aria-label="Favorite Henry"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Henry</div><div class="meaning">ruler of home</div></div>
+<div class="name-card"><span class="heart" data-name="George" aria-label="Favorite George"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">George</div><div class="meaning">farmer</div></div>
+<div class="name-card"><span class="heart" data-name="Buddy" aria-label="Favorite Buddy"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Buddy</div><div class="meaning">best friend</div></div>
+<div class="name-card"><span class="heart" data-name="Rocky" aria-label="Favorite Rocky"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Rocky</div><div class="meaning">rock solid energy</div></div>
+<div class="name-card"><span class="heart" data-name="Jasper" aria-label="Favorite Jasper"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Jasper</div><div class="meaning">gentle jasper</div></div>
+<div class="name-card"><span class="heart" data-name="Asher" aria-label="Favorite Asher"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Asher</div><div class="meaning">gentle asher</div></div>
+<div class="name-card"><span class="heart" data-name="Beau" aria-label="Favorite Beau"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-popular">Beau</div><div class="meaning">gentle beau</div></div>
+</div>
 </section>
 
 <div class="quick-links">
@@ -327,24 +302,14 @@ Copy Link
 </footer>
 <script src="js/main.js?v=9" defer></script>
 <script src="js/features.js?v=9" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F2R2BCWJ1B"></script>
 <script>
-function loadAnalytics() {
-  const script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F2R2BCWJ1B';
-  script.async = true;
-  script.onload = function() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F2R2BCWJ1B');
-  };
-  document.head.appendChild(script);
-}
-if (window.addEventListener) {
-  window.addEventListener('load', loadAnalytics);
-} else {
-  window.attachEvent('onload', loadAnalytics);
-}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F2R2BCWJ1B');
 </script>
 </body>
 </html>
