@@ -15,7 +15,53 @@
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
 <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:#4a3f35;background:#fff8f0;line-height:1.6}
+.container{max-width:860px;margin:0 auto;padding:0 20px}
+header{text-align:center;padding:48px 20px 32px;position:relative}
+header h1{font-size:2.4rem;color:#3d2e24;margin-bottom:10px;font-family:'Playfair Display',serif;line-height:1.25}
+header h1::before{content:'🐾 ';font-size:1.8rem}
+header h1::after{content:' 🐾';font-size:1.8rem}
+header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
+.feature-buttons{padding:16px 0;text-align:center}
+.feature-buttons .container{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.feature-btn{padding:12px 28px;border:2px solid #f0e0d0;border-radius:28px;background:#fff8f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;color:#8a7b6b;transition:all .2s}
+.feature-btn:hover{border-color:#e8c8a8;background:#fff;transform:translateY(-1px)}
+.feature-btn.active{background:linear-gradient(135deg,#ff91a4,#e25563);color:#fff;border-color:#e25563;box-shadow:0 4px 12px rgba(226,85,99,.25)}
+.pop-gender-tabs{display:flex;gap:0;margin-bottom:20px;border-radius:28px;overflow:hidden;border:2px solid #f0e0d0}
+.gender-tab{flex:1;padding:14px 20px;border:none;background:#fff8f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#8a7b6b;transition:all .2s;text-align:center}
+.gender-tab:hover{background:#fff}
+.gender-tab.active{background:linear-gradient(135deg,#ff91a4,#e25563);color:#fff}
+.pop-breed-row,.pop-trait-row{background:#fff;border-radius:20px;padding:18px 22px;border:2px solid #f5e6d3;box-shadow:0 2px 12px rgba(0,0,0,.03);margin-bottom:14px}
+.filter-label{display:block;font-size:.95rem;font-weight:700;color:#3d2e24;margin-bottom:10px;font-family:'DM Sans',sans-serif}
+.filter-pills{display:flex;flex-wrap:wrap;gap:8px}
+.filter-pill{padding:8px 18px;border-radius:20px;border:1.5px solid #e8ddd0;background:#f8f4f0;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;color:#8a7b6b;transition:all .2s}
+.filter-pill:hover{border-color:#ffc8dc;background:#fff}
+.filter-pill.active{background:#ff91a4;color:#fff;border-color:#ff91a4}
+.gen-btn{display:block;margin:0 auto 32px;padding:15px 48px;border:none;border-radius:30px;background:linear-gradient(135deg,#ff91a4 0%,#e25563 100%);color:#fff;font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(226,85,99,.3)}
+.gen-btn:hover{background:linear-gradient(135deg,#e87da0 0%,#c94452 100%);box-shadow:0 6px 18px rgba(226,85,99,.35);transform:translateY(-2px)}
+.results{margin-bottom:40px}
+.name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.name-card{background:#fff;border-radius:16px;padding:16px 10px 14px;text-align:center;transition:transform .15s,box-shadow .15s;cursor:default;border:1.5px solid #f5e6d3;position:relative}
+.name-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.name-card .heart{position:absolute;top:8px;right:8px;width:22px;height:22px;cursor:pointer;transition:transform .15s}
+.name-card .heart:hover{transform:scale(1.2)}
+.name-card .heart svg{width:100%;height:100%}
+.name-card .heart svg path{fill:#f0e0d0;stroke:#e8c8a8;stroke-width:2;transition:fill .2s}
+.name-card .heart.liked svg path{fill:#e25563;stroke:#e25563}
+.name-card .name{font-weight:700;font-size:1.2rem;transition:color .25s}
+.name-card .name.color-popular{color:#5e8a5e}
+.name-card .meaning{font-size:.78rem;color:#a89a8a;margin-top:4px}
+.quick-links{text-align:center;padding:0 0 28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.quick-link-btn{display:inline-block;padding:10px 28px;border-radius:24px;background:#ff91a4;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
+.quick-link-btn:hover{background:#e25563;transform:translateY(-1px)}
+@media(max-width:600px){
+header h1{font-size:1.8rem}
+.name-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+}
+</style>
+<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 <meta property="og:title" content="Puppy Name Generator - Find the Perfect Name for Your New Dog">
 <meta property="og:description" content="Struggling to name your new puppy? Our puppy name generator helps you find the perfect name by gender, style, breed, and meaning. Over 300 handpicked names for every type of dog.">
 <meta property="og:type" content="website">
@@ -294,27 +340,10 @@ function loadAnalytics() {
   };
   document.head.appendChild(script);
 }
-function markFontsLoaded() {
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(function() {
-      document.body.classList.add('fonts-loaded');
-    });
-  } else {
-    setTimeout(function() {
-      document.body.classList.add('fonts-loaded');
-    }, 3000);
-  }
-}
 if (window.addEventListener) {
-  window.addEventListener('load', function() {
-    loadAnalytics();
-    markFontsLoaded();
-  });
+  window.addEventListener('load', loadAnalytics);
 } else {
-  window.attachEvent('onload', function() {
-    loadAnalytics();
-    markFontsLoaded();
-  });
+  window.attachEvent('onload', loadAnalytics);
 }
 </script>
 </body>
