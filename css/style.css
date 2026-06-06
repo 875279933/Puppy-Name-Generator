@@ -67,6 +67,11 @@ header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
 .share-whatsapp{background:#25d366}
 .share-copy{background:#8a7b6b}
 .share-copy.copied{background:#66bb6a}
+.related-tools{text-align:center;padding:28px 24px;background:#fff;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);margin-bottom:32px;border:2px solid #f5e6d3}
+.related-tools h3{font-size:1.1rem;color:#3d2e24;margin-bottom:16px;font-family:'DM Sans',sans-serif;font-weight:600}
+.related-tools-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.related-tools-links a{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:.88rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all .2s;color:#ff91a4;background:#fff;border:1.5px solid #ff91a4}
+.related-tools-links a:hover{background:#ff91a4;color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
 .intro h2{font-size:1.5rem;margin-bottom:14px;color:#3d2e24}
 .intro h3{font-size:1.15rem;margin:20px 0 8px;color:#3d2e24}
 .intro p{color:#8a7b6b;margin-bottom:12px;font-size:.98rem}
