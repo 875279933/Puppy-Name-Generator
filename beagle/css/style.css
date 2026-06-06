@@ -72,6 +72,11 @@ header p{font-size:1rem;color:#8a7b6b}
 .share-whatsapp{background:#25d366}
 .share-copy{background:#8a7b6b}
 .share-copy.copied{background:#66bb6a}
+.related-tools{text-align:center;padding:28px 24px;background:#fff;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);margin-bottom:32px;border:2px solid #f5e6d3}
+.related-tools h3{font-size:1.1rem;color:#3d2e24;margin-bottom:16px;font-family:'DM Sans',sans-serif;font-weight:600}
+.related-tools-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.related-tools-links a{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:24px;text-decoration:none;font-size:.88rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all .2s;color:#ff91a4;background:#fff;border:1.5px solid #ff91a4}
+.related-tools-links a:hover{background:#ff91a4;color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
 footer{text-align:center;padding:20px;color:#c4b5a5;font-size:.85rem;border-top:1px solid #f5e6d3;margin-top:24px}
 .footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:12px}
 .footer-links a{color:#a89a8a;text-decoration:none;font-size:.82rem;transition:color .2s}
