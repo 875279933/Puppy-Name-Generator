@@ -1,4 +1,4 @@
-﻿// Utility functions for favorites
+﻿﻿﻿﻿﻿﻿// Utility functions for favorites
 function getFavs(){try{return JSON.parse(localStorage.getItem('pupFavs'))||[]}catch(e){return[]}}
 function saveFav(name,add){const f=getFavs();if(add){if(!f.includes(name))f.push(name)}else{const i=f.indexOf(name);if(i>-1)f.splice(i,1)}localStorage.setItem('pupFavs',JSON.stringify(f))}
 
@@ -248,7 +248,7 @@ reader.readAsDataURL(file);
 
 // Photo button event listeners initialized in DOMContentLoaded
 
-function analyzeImage(ctx,w,h){
+function analyzeImage(srcImg){
 const features={
 colors:[],
 brightness:'medium',
@@ -258,8 +258,16 @@ vibe:'friendly',
 energy:'medium'
 };
 
-const step=Math.max(1,Math.floor(w*h/15000));
-const pixels=ctx.getImageData(0,0,w,h).data;
+const MAX=200;
+const ratio=Math.min(MAX/srcImg.width,MAX/srcImg.height,1);
+const w=Math.max(1,Math.floor(srcImg.width*ratio));
+const h=Math.max(1,Math.floor(srcImg.height*ratio));
+const small=document.createElement('canvas');
+small.width=w;small.height=h;
+const sctx=small.getContext('2d');
+sctx.drawImage(srcImg,0,0,w,h);
+
+const pixels=sctx.getImageData(0,0,w,h).data;
 let rTotal=0,gTotal=0,bTotal=0,count=0;
 
 const colorBuckets={
@@ -270,13 +278,15 @@ white:0,
 cream:0,
 red:0,
 gray:0,
+silver:0,
 tan:0,
 chocolate:0,
 blue:0,
-merle:0
+sable:0,
+fawn:0
 };
 
-for(let i=0;i<pixels.length;i+=4*step){
+for(let i=0;i<pixels.length;i+=4){
 const r=pixels[i],g=pixels[i+1],b=pixels[i+2],a=pixels[i+3];
 if(a<128)continue;
 
@@ -287,10 +297,13 @@ const [h,s,l]=hsl;
 
 if(l<0.12)colorBuckets.black++;
 else if(l>0.88)colorBuckets.white++;
+else if(l<0.22&&h>=10&&h<=45&&s>0.1)colorBuckets.sable++;
 else if(h>=20&&h<=40&&s>0.15&&l>0.25&&l<0.55)colorBuckets.brown++;
 else if(h>=15&&h<=30&&s>0.1&&l>0.4&&l<0.7)colorBuckets.tan++;
+else if(h>=20&&h<=45&&s>0.2&&l>0.55&&l<0.78)colorBuckets.fawn++;
 else if(h>=30&&h<=55&&s>0.15&&l>0.5&&l<0.8)colorBuckets.golden++;
 else if(h>=0&&h<=15&&s>0.25&&l>0.3&&l<0.6)colorBuckets.red++;
+else if(s<0.12&&l>0.55&&l<0.85)colorBuckets.silver++;
 else if(s<0.12&&l>0.35&&l<0.7)colorBuckets.gray++;
 else if(h>=25&&h<=50&&s>0.1&&l>0.65&&l<0.88)colorBuckets.cream++;
 else if(h>=20&&h<=35&&s>0.2&&l>0.2&&l<0.45)colorBuckets.chocolate++;
@@ -301,8 +314,8 @@ const brightness=rTotal/(count*255);
 features.brightness=brightness>0.68?'light':brightness>0.42?'medium':'dark';
 
 const sorted=Object.entries(colorBuckets).sort((a,b)=>b[1]-a[1]);
-const topColors=sorted.filter((_,i)=>i<3&&_[1]>0).map(e=>e[0]);
-features.colors=topColors;
+const topColors=sorted.filter((_,i)=>i<3&&_[1]>count*0.04).map(e=>e[0]);
+features.colors=topColors.length?topColors:[sorted[0][1]>0?sorted[0][0]:'golden'];
 
 const regions=5;
 const regionColors=[];
@@ -310,7 +323,7 @@ for(let ry=0;ry<regions;ry++){
 for(let rx=0;rx<regions;rx++){
 const sx=Math.floor(w*rx/regions),sy=Math.floor(h*ry/regions);
 const sw=Math.floor(w/regions),sh=Math.floor(h/regions);
-const regionData=ctx.getImageData(sx,sy,sw,sh).data;
+const regionData=sctx.getImageData(sx,sy,sw,sh).data;
 let rr=0,gg=0,bb=0,c=0;
 for(let j=0;j<regionData.length;j+=20){
 rr+=regionData[j];gg+=regionData[j+1];bb+=regionData[j+2];c++;
@@ -336,8 +349,8 @@ if(variance>120&&satTotal>50){
 features.colors.push('merle');
 }
 
-if(w*h>400000)features.size='large';
-else if(w*h<150000)features.size='small';
+if(srcImg.width*srcImg.height>400000)features.size='large';
+else if(srcImg.width*srcImg.height<150000)features.size='small';
 
 if(brightness>0.65)features.energy='high';
 else if(brightness<0.45)features.energy='calm';
@@ -374,9 +387,12 @@ white:'White',
 cream:'Cream',
 red:'Red/Orange',
 gray:'Gray',
+silver:'Silver',
 tan:'Tan',
 chocolate:'Chocolate',
 blue:'Blue',
+sable:'Sable',
+fawn:'Fawn',
 blackTan:'Black & Tan',
 spotted:'Spotted',
 merle:'Merle'
@@ -413,58 +429,41 @@ large:[["Tank","strong"],["Titan","giant"],["Goliath","big guy"],["Moose","large
 calm:[["Zen","peaceful"],["Chill","relaxed"],["Mellow","calm"],["Serenity","peace"],["Tranquil","calm"],["Harmony","balance"],["Peace","calm"],["Calm","serene"],["Quiet","peaceful"],["Buddha","enlightened"],["Yogi","peaceful"],["Meditation","calm"],["Muse","inspiration"],["Dream","peaceful dream"],["Cloud","fluffy"],["Breeze","gentle wind"],["River","calm water"],["Lake","still water"],["Ocean","deep calm"],["Moon","peaceful"]],
 energetic:[["Turbo","turbo"],["Rocket","fast"],["Bolt","lightning"],["Flash","quick"],["Dash","speedy"],["Zoom","zoom"],["Jet","jet speed"],["Blaze","fiery"],["Spark","spark"],["Fire","hot energy"],["Thunder","loud"],["Storm","stormy"],["Cyclone","windy"],["Hurricane","powerful"],["Tornado","twister"],["Whirlwind","spinning"],["Vortex","swirl"],["Meteor","space rock"],["Comet","flying star"],["Asteroid","space object"]],
 friendly:[["Buddy","best friend"],["Charlie","friendly"],["Max","greatest"],["Cooper","funny"],["Milo","sweet"],["Leo","lion"],["Rocky","strong"],["Duke","noble"],["Bear","cuddly"],["Teddy","teddy bear"],["Archie","genuine"],["Ollie","affectionate"],["Louie","famous warrior"],["Theo","divine gift"],["Finn","fair"],["Jack","god is gracious"],["Sam","listener"],["Ben","son of the right hand"],["Henry","ruler of home"],["George","farmer"]],
-mysterious:[["Mystery","unknown"],["Enigma","puzzle"],["Phantom","ghost"],["Shadow","dark"],["Shade","spirit"],["Ghost","spooky"],["Specter","ghostly"],["Phantom","mysterious"],["Mystic","magical"],["Magic","enchanting"],["Wizard","magical"],["Warlock","magical"],["Witch","magical"],["Sorcerer","magic user"],["Enchantress","magical"],["Spell","magic"],["Charm","magic"],["Hex","magic"],["Curse","magic"],["Bewitch","magic"]]
+mysterious:[["Mystery","unknown"],["Enigma","puzzle"],["Phantom","ghost"],["Shadow","dark"],["Shade","spirit"],["Ghost","spooky"],["Specter","ghostly"],["Phantom","mysterious"],["Mystic","magical"],["Magic","enchanting"],["Wizard","magical"],["Warlock","magical"],["Witch","magical"],["Sorcerer","magic user"],["Enchantress","magical"],["Spell","magic"],["Charm","magic"],["Hex","magic"],["Curse","magic"],["Bewitch","magic"]],
+silver:[["Silver","metallic shine"],["Sterling","pure silver"],["Misty","silvery fog"],["Pearl","silvery gem"],["Ash","cool gray"],["Smokey","smoky silver"],["Platinum","precious metal"],["Quicksilver","mercury"],["Slate","silvery stone"],["Frosty","icy silver"],["Glacier","frozen silver"],["Pewter","soft metal"],["Chrome","shiny metal"],["Mercury","silver planet"],["Moonbeam","moon glow"],["Starlight","silver stars"],["Dusty","soft silver"],["Whisper","soft silver"],["Cloud","soft silver"],["Zephyr","silver breeze"]],
+sable:[["Sable","dark fur tip"],["Bear","dark sable"],["Wolves","wild sable"],["Bruno","strong sable"],["Cocoa","dark sable"],["Hazel","warm sable"],["Maple","dark autumn"],["Espresso","dark coffee"],["Mahogany","dark wood"],["Bark","tree bark"],["Onyx","dark stone"],["Shadow","dark fur"],["Twilight","dark glow"],["Stormy","dark storm"],["Tobacco","dark warm"],["Walnut","dark wood"],["Cedar","dark wood"],["Russet","dark red-brown"],["Grizzly","dark bear"],["Acorn","dark nut"]],
+fawn:[["Fawn","young deer"],["Caramel","sweet fawn"],["Honey","golden fawn"],["Sandy","beach fawn"],["Toffee","sweet fawn"],["Butterscotch","warm fawn"],["Maple","warm fawn"],["Bambi","young deer"],["Biscuit","baked fawn"],["Peach","soft fawn"],["Goldie","golden fawn"],["Daisy","fresh fawn"],["Peanut","small fawn"],["Mochi","soft fawn"],["Latte","cream fawn"],["Teddy","soft fawn"],["Pumpkin","orange fawn"],["Apricot","soft fawn"],["Buttercup","golden fawn"],["Hazel","warm fawn"]]
 };
 
 function generatePhotoNames(f){
-let pool=[];
-f.colors.forEach(c=>{
-if(PHOTO_NAMES[c])pool=pool.concat(PHOTO_NAMES[c]);
+const cats=[];
+f.colors.forEach(c=>{if(PHOTO_NAMES[c])cats.push(c)});
+if(f.pattern==='spotted'||f.pattern==='mixed')cats.push('spotted');
+if(f.brightness==='dark'&&!cats.includes('dark'))cats.push('dark');
+if(f.vibe==='playful'&&!cats.includes('playful'))cats.push('playful');
+if(f.vibe==='mysterious'&&!cats.includes('mysterious'))cats.push('mysterious');
+if(f.size==='small'&&!cats.includes('small'))cats.push('small');
+if(f.size==='large'&&!cats.includes('large'))cats.push('large');
+if(f.energy==='calm'&&!cats.includes('calm'))cats.push('calm');
+if(f.energy==='high'&&!cats.includes('energetic'))cats.push('energetic');
+if(cats.length===0)cats.push('golden');
+
+const scores={};
+cats.forEach(cat=>{
+if(PHOTO_NAMES[cat]){
+PHOTO_NAMES[cat].forEach(n=>{
+const key=n[0];
+if(!scores[key])scores[key]={name:n,matches:0};
+scores[key].matches++;
+});
+}
 });
 
-if(f.pattern==='spotted'||f.pattern==='mixed'){
-if(PHOTO_NAMES.spotted)pool=pool.concat(PHOTO_NAMES.spotted);
-}
+let pool=Object.values(scores);
+if(pool.length===0)pool=PHOTO_NAMES.golden.map(n=>({name:n,matches:1}));
 
-if(f.brightness==='dark'){
-if(PHOTO_NAMES.dark)pool=pool.concat(PHOTO_NAMES.dark);
-}
-
-if(f.vibe==='playful'){
-if(PHOTO_NAMES.playful)pool=pool.concat(PHOTO_NAMES.playful);
-}
-
-if(f.vibe==='mysterious'){
-if(PHOTO_NAMES.mysterious)pool=pool.concat(PHOTO_NAMES.mysterious);
-}
-
-if(f.size==='small'){
-if(PHOTO_NAMES.small)pool=pool.concat(PHOTO_NAMES.small);
-}
-
-if(f.size==='large'){
-if(PHOTO_NAMES.large)pool=pool.concat(PHOTO_NAMES.large);
-}
-
-if(f.energy==='calm'){
-if(PHOTO_NAMES.calm)pool=pool.concat(PHOTO_NAMES.calm);
-}
-
-if(f.energy==='high'){
-if(PHOTO_NAMES.energetic)pool=pool.concat(PHOTO_NAMES.energetic);
-}
-
-if(pool.length===0)pool=PHOTO_NAMES.golden;
-
-const seen=new Set();
-const uniquePool=pool.filter(n=>{
-if(seen.has(n[0]))return false;
-seen.add(n[0]);
-return true;
-});
-
-const shuffled=[...uniquePool].sort(()=>Math.random()-0.5);
-return shuffled.slice(0,16);
+pool.sort((a,b)=>b.matches-a.matches||Math.random()-0.5);
+return pool.slice(0,16);
 }
 
 // Unified initialization - all event listeners and bootstrapping happens here
@@ -529,25 +528,32 @@ const genPhotoBtn=document.getElementById('genPhotoBtn');
 if(genPhotoBtn)genPhotoBtn.addEventListener('click',()=>{
 const img=new Image();
 img.onload=()=>{
-const canvas=photoCanvas;
-canvas.width=img.width;
-canvas.height=img.height;
-const ctx=canvas.getContext('2d');
-ctx.drawImage(img,0,0);
-const features=analyzeImage(ctx,img.width,img.height);
+genPhotoBtn.disabled=true;
+const orig=genPhotoBtn.textContent;
+genPhotoBtn.textContent='Analyzing...';
+try{
+const features=analyzeImage(img);
 showFeatures(features);
 const names=generatePhotoNames(features);
 showPhotoNames(names);
+}finally{
+genPhotoBtn.disabled=false;
+genPhotoBtn.textContent=orig;
+}
 };
 img.src=previewImg.src;
 });
 });
 
-function showPhotoNames(names){
+function showPhotoNames(items){
 const favs=getFavs();
-photoNameGrid.innerHTML=names.map(n=>{
+const maxMatch=items.length?items[0].matches:1;
+photoNameGrid.innerHTML=items.map((item,i)=>{
+const n=item.name;
 const liked=favs.includes(n[0]);
-return`<div class="name-card"><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-photo">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
+const pct=maxMatch>0?Math.round((item.matches/maxMatch)*100):60;
+const topPick=(i===0&&item.matches>=2)?'<span class="top-pick">⭐ Top Match</span>':'';
+return`<div class="name-card">${topPick}<span class="match-pct">${pct}% match</span><span class="heart${liked?' liked':''}" data-name="${n[0]}" aria-label="Favorite ${n[0]}"><svg viewBox="0 0 24 24" role="img" aria-label="Heart icon"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span><div class="name color-photo">${n[0]}</div><div class="meaning">${n[1]}</div></div>`;
 }).join('');
 
 photoNameGrid.querySelectorAll('.heart').forEach(h=>{

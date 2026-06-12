@@ -38,6 +38,8 @@ header p{font-size:1.05rem;color:#8a7b6b;max-width:520px;margin:0 auto}
 .name-card .name{font-weight:700;font-size:1.2rem;transition:color .25s}
 .name-card .name.color-popular{color:#5e8a5e}
 .name-card .meaning{font-size:.78rem;color:#a89a8a;margin-top:4px}
+.name-card .match-pct{position:absolute;top:8px;left:8px;font-size:.68rem;font-weight:700;color:#5e8a5e;background:#e8f4e8;padding:2px 7px;border-radius:10px;font-family:'DM Sans',sans-serif}
+.name-card .top-pick{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:.68rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#ffb347,#ff8c42);padding:3px 10px;border-radius:10px;font-family:'DM Sans',sans-serif;box-shadow:0 2px 6px rgba(255,140,66,.35);white-space:nowrap}
 .dl-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px}
 .dl-btns{display:flex;align-items:center;flex-wrap:wrap;gap:8px;justify-content:center}
 .download-btn{display:inline-block;padding:12px 36px;border:2px solid #ffb6c1;border-radius:28px;background:#fff;color:#ff91a4;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .2s}
