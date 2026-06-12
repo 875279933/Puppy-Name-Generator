@@ -129,9 +129,7 @@ header h1{font-size:1.6rem}
 </nav>
 </footer>
 
-<script src="js/main.js"></script>
-<script src="js/popular.js"></script>
-<script src="js/features.js"></script>
+<script src="js/names.js?v=1"></script><script src="js/features.js?v=10"></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 const names=JSON.parse(localStorage.getItem('pupCompare')||'[]');
@@ -226,12 +224,8 @@ return 3;
 }
 
 function getMeaning(name){
-if(typeof POPULAR_NAMES!=='undefined'){
-const found=POPULAR_NAMES.find(n=>n[0]===name);
-if(found)return found[1];
-}
-if(typeof POP_NAMES!=='undefined'){
-for(const gender of Object.values(POP_NAMES)){
+if(typeof PUPPY_NAMES_DATA!=='undefined'){
+for(const gender of Object.values(PUPPY_NAMES_DATA)){
 for(const breed of Object.values(gender)){
 for(const trait of Object.values(breed)){
 const found=trait.find(n=>n[0]===name);
